@@ -171,6 +171,8 @@
   .param-table th { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
   .param-table td.mono { font-family: Consolas, monospace; color: #0c5d55; white-space: nowrap; }
   .demo-panel { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+  .demo-upload { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .demo-upload .copy-btn { height: 34px; }
   .demo-controls { display: flex; flex-wrap: wrap; gap: 12px 18px; padding: 12px 14px; border-bottom: 1px solid var(--line); background: #fbfcfb; }
   .ctl { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
   .ctl b { color: var(--ink); min-width: 30px; text-align: right; font-variant-numeric: tabular-nums; }
@@ -252,32 +254,30 @@
 
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="5" y="7" width="14" height="12" rx="5" fill="#7df3df"/><circle cx="9.4" cy="12" r="1.5" fill="#0b2822"/><circle cx="14.6" cy="12" r="1.5" fill="#0b2822"/><path d="M9.6 15.2c1.5 1.3 3.3 1.3 4.8 0" stroke="#0b2822" stroke-width="1.4" fill="none" stroke-linecap="round"/><rect x="10.9" y="2.5" width="2.2" height="4" rx="1.1" fill="#fbbf24"/><circle cx="12" cy="2.4" r="1.6" fill="#f472b6"/></svg></span><span>机器学习技术全景</span></div>
+      <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="5" y="7" width="14" height="12" rx="5" fill="#7df3df"/><circle cx="9.4" cy="12" r="1.5" fill="#0b2822"/><circle cx="14.6" cy="12" r="1.5" fill="#0b2822"/><path d="M9.6 15.2c1.5 1.3 3.3 1.3 4.8 0" stroke="#0b2822" stroke-width="1.4" fill="none" stroke-linecap="round"/><rect x="10.9" y="2.5" width="2.2" height="4" rx="1.1" fill="#fbbf24"/><circle cx="12" cy="2.4" r="1.6" fill="#f472b6"/></svg></span><span>人工智能教学</span></div>
       <nav class="nav">
-        <a href="#overview">技术全景</a>
-        <a href="#roadmap">学习路线</a>
-        <a href="#workflow">实战流程</a>
-        <a href="#library">技术库</a>
+        <a href="#overview">总览</a>
+        <a href="#library">机器学习</a>
+        <a href="#library">深度学习</a>
       </nav>
-      <div class="progress-pill">学习进度 <strong id="done-count">0</strong>/10 <span class="progress-track"><span class="progress-fill" id="progress-fill"></span></span></div>
     </div>
   </header>
 
   <section class="hero" id="top">
     <canvas id="net" aria-hidden="true"></canvas>
     <div class="wrap hero-inner">
-      <span class="eyebrow"><svg class="icon icon-sm"><use href="#i-target"/></svg>从入门到落地 · 分步行动指南</span>
-      <h1>机器学习技术全景</h1>
-      <p class="hero-sub">把机器学习拆成清晰的步骤：每一步该学什么、动手练什么、用哪些工具，以及每个模型的定义、代码、可调参数和动态可视化。</p>
+      <span class="eyebrow"><svg class="icon icon-sm"><use href="#i-target"/></svg>机器学习与深度学习 · 互动教学</span>
+      <h1>人工智能教学站</h1>
+      <p class="hero-sub">按机器学习和深度学习两大方向学习每个模型的定义、代码、关键参数与动态可视化，也可以上传自己的数据，让模型直接输出结果。</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#library">进入技术库 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn-ghost" href="#roadmap"><svg class="icon icon-sm"><use href="#i-book"/></svg>看学习路线</a>
+        <a class="btn btn-primary" href="#library">开始学习 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#overview"><svg class="icon icon-sm"><use href="#i-grid"/></svg>看两大方向</a>
       </div>
       <div class="hero-stats">
-        <div class="stat"><b>4</b><span>大技术方向</span></div>
-        <div class="stat"><b>10</b><span>个学习步骤</span></div>
+        <div class="stat"><b>2</b><span>大学习方向</span></div>
         <div class="stat"><b>24</b><span>个模型与算法</span></div>
         <div class="stat"><b>4</b><span>项核心内容</span></div>
+        <div class="stat"><b>1</b><span>键上传数据</span></div>
       </div>
     </div>
   </section>
@@ -285,62 +285,21 @@
   <section id="overview">
     <div class="wrap">
       <div class="section-head">
-        <span class="section-kicker"><svg class="icon icon-sm"><use href="#i-cpu"/></svg>技术全景</span>
-        <h2>机器学习分哪几类</h2>
-        <p>先建立整体地图，再按步骤深入。下面四类基本覆盖了大多数机器学习的任务。</p>
+        <span class="section-kicker"><svg class="icon icon-sm"><use href="#i-cpu"/></svg>两大方向</span>
+        <h2>机器学习和深度学习</h2>
+        <p>机器学习强调从数据中学习规律；深度学习是机器学习的子集，用深层神经网络自动学习特征。</p>
       </div>
       <div class="cat-grid">
         <article class="cat-card">
-          <div class="cat-head"><span class="cat-icon teal"><svg class="icon icon-sm"><use href="#i-line"/></svg></span><div><h3>监督学习</h3><span class="en">Supervised Learning</span></div></div>
-          <p>从带标签的数据里学习“输入到输出”的映射，是最常见的一类。</p>
-          <div class="chips"><span class="chip">线性回归</span><span class="chip">逻辑回归</span><span class="chip">决策树</span><span class="chip">随机森林</span><span class="chip">XGBoost</span><span class="chip">SVM</span></div>
-        </article>
-        <article class="cat-card">
-          <div class="cat-head"><span class="cat-icon amber"><svg class="icon icon-sm"><use href="#i-layers"/></svg></span><div><h3>无监督学习</h3><span class="en">Unsupervised Learning</span></div></div>
-          <p>从没有标签的数据中发现结构、分组或压缩表示。</p>
-          <div class="chips"><span class="chip">K-Means</span><span class="chip">层次聚类</span><span class="chip">PCA</span><span class="chip">t-SNE</span><span class="chip">DBSCAN</span><span class="chip">孤立森林</span></div>
+          <div class="cat-head"><span class="cat-icon teal"><svg class="icon icon-sm"><use href="#i-line"/></svg></span><div><h3>机器学习</h3><span class="en">Machine Learning</span></div></div>
+          <p>从数据中学习映射、分组与策略，包括监督、无监督和强化学习。</p>
+          <div class="chips"><span class="chip">线性回归</span><span class="chip">逻辑回归</span><span class="chip">决策树</span><span class="chip">SVM</span><span class="chip">K-Means</span><span class="chip">PCA</span><span class="chip">Q-Learning</span></div>
         </article>
         <article class="cat-card">
           <div class="cat-head"><span class="cat-icon rose"><svg class="icon icon-sm"><use href="#i-flask"/></svg></span><div><h3>深度学习</h3><span class="en">Deep Learning</span></div></div>
-          <p>用多层神经网络自动学习特征，擅长图像、文本和序列数据。</p>
+          <p>用深层神经网络自动学习特征，擅长图像、文本、序列与生成任务。</p>
           <div class="chips"><span class="chip">MLP</span><span class="chip">CNN</span><span class="chip">RNN/LSTM</span><span class="chip">Transformer</span><span class="chip">GAN</span><span class="chip">扩散模型</span></div>
         </article>
-        <article class="cat-card">
-          <div class="cat-head"><span class="cat-icon blue"><svg class="icon icon-sm"><use href="#i-rocket"/></svg></span><div><h3>强化学习</h3><span class="en">Reinforcement Learning</span></div></div>
-          <p>智能体通过试错获得奖励，学习长期最优的策略。</p>
-          <div class="chips"><span class="chip">Q-Learning</span><span class="chip">DQN</span><span class="chip">PPO</span><span class="chip">A3C</span></div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="roadmap" class="band-light">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="section-kicker"><svg class="icon icon-sm"><use href="#i-book"/></svg>学习路线</span>
-        <h2>每一步具体做什么</h2>
-        <p>按顺序走完 10 步，每步都给出行动清单、工具和验收标准。完成后勾选，进度会自动保存。</p>
-      </div>
-      <div class="roadmap" id="roadmap-list"></div>
-    </div>
-  </section>
-
-  <section id="workflow">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="section-kicker"><svg class="icon icon-sm"><use href="#i-target"/></svg>实战流程</span>
-        <h2>做项目时的八步闭环</h2>
-        <p>学习之外，任何真实项目都可以套用这条流水线，每一步都有明确的交付物。</p>
-      </div>
-      <div class="flow">
-        <div class="flow-item"><span class="flow-num">1</span><h3>定义问题</h3><p>明确是分类、回归、聚类还是推荐，并定下成功指标，如 F1、RMSE 或 AUC。</p></div>
-        <div class="flow-item"><span class="flow-num">2</span><h3>获取数据</h3><p>确定数据来源、采集方式、标注规则和存储位置，保证数据可复现。</p></div>
-        <div class="flow-item"><span class="flow-num">3</span><h3>清洗数据</h3><p>处理缺失值、重复值、异常值和格式不统一，建立干净的数据集。</p></div>
-        <div class="flow-item"><span class="flow-num">4</span><h3>探索分析</h3><p>看分布、相关性和趋势，找到特征与目标之间的关系。</p></div>
-        <div class="flow-item"><span class="flow-num">5</span><h3>特征工程</h3><p>编码、缩放、构造新特征并做特征选择，让模型更容易学习。</p></div>
-        <div class="flow-item"><span class="flow-num">6</span><h3>建模训练</h3><p>先跑简单基线，再尝试复杂模型，用交叉验证比较效果。</p></div>
-        <div class="flow-item"><span class="flow-num">7</span><h3>评估解释</h3><p>看业务指标、混淆矩阵和特征重要性，排查数据泄漏。</p></div>
-        <div class="flow-item"><span class="flow-num">8</span><h3>部署监控</h3><p>封装成 API 上线，持续监控性能漂移并迭代模型。</p></div>
       </div>
     </div>
   </section>
@@ -355,10 +314,8 @@
       <div class="library-bar">
         <div class="filters" id="filters">
           <button class="filter-btn active" data-cat="all">全部</button>
-          <button class="filter-btn" data-cat="supervised">监督学习</button>
-          <button class="filter-btn" data-cat="unsupervised">无监督学习</button>
-          <button class="filter-btn" data-cat="deep">深度学习</button>
-          <button class="filter-btn" data-cat="rl">强化学习</button>
+          <button class="filter-btn" data-cat="ml">机器学习</button>
+          <button class="filter-btn" data-cat="dl">深度学习</button>
         </div>
         <label class="search"><svg class="icon icon-sm"><use href="#i-search"/></svg><input id="search-input" type="search" placeholder="搜索算法名称"></label>
       </div>
@@ -397,6 +354,10 @@
           <p class="form-hint">编辑时每行一个参数，格式：参数名 | 含义 | 调参建议</p>
         </section>
         <section class="tab-pane" data-pane="demo">
+          <div class="demo-upload">
+            <label class="copy-btn">上传 CSV 数据<input type="file" id="m-upload" accept=".csv,text/csv" hidden></label>
+            <span class="form-hint" id="m-upload-note" style="margin:0">前两列作为特征，最后一列作为标签（分类/回归）或省略（聚类）。</span>
+          </div>
           <div class="demo-panel">
             <div class="demo-controls" id="m-controls"></div>
             <canvas class="demo-canvas" id="m-demo"></canvas>
@@ -461,9 +422,6 @@
 
   const CAT_LABEL = { supervised: "监督学习", unsupervised: "无监督学习", deep: "深度学习", rl: "强化学习" };
   const STORE_KEY = "ml-tech-v1";
-  const roadmapEl = document.getElementById("roadmap-list");
-  const doneCountEl = document.getElementById("done-count");
-  const progressFill = document.getElementById("progress-fill");
   const toastEl = document.getElementById("toast");
 
   function loadOverrides() { try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); } catch (e) { return {}; } }
@@ -472,51 +430,6 @@
   function effectiveTech() { return TECH.map(t => Object.assign({}, t, overrides[t.id] || {})); }
   function showToast(msg) { toastEl.textContent = msg; toastEl.classList.add("show"); clearTimeout(toastEl._t); toastEl._t = setTimeout(() => toastEl.classList.remove("show"), 2200); }
 
-  function renderRoadmap() {
-    const done = JSON.parse(localStorage.getItem("ml-roadmap-done") || "{}");
-    roadmapEl.innerHTML = STEPS.map((s, i) => {
-      const open = i === 0 ? " open" : "";
-      const isDone = done[i] ? " done" : "";
-      return `<article class="step${open}${isDone}" data-index="${i}">
-        <button class="step-head" data-action="toggle">
-          <span class="step-num">${String(i + 1).padStart(2, "0")}</span>
-          <span class="step-title"><h3>${s.title}</h3><p>${s.brief}</p></span>
-          <span class="step-toggle" data-action="done" role="button" tabindex="0"><svg class="icon icon-sm"><use href="#i-check"/></svg><span>${isDone ? "已完成" : "标记完成"}</span></span>
-          <svg class="icon step-chev"><use href="#i-chev"/></svg>
-        </button>
-        <div class="step-body"><div class="step-body-grid">
-          <div><div class="side-block"><h4>这一步要做什么</h4><ul class="do-list">${s.tasks.map(t => `<li>${t}</li>`).join("")}</ul></div></div>
-          <div><div class="side-block"><h4>主要工具</h4><div class="tool-row">${s.tools.map(t => `<span class="tool-chip">${t}</span>`).join("")}</div></div>
-          <p class="accept"><b>验收标准：</b>${s.accept}</p></div>
-        </div></div>
-      </article>`;
-    }).join("");
-  }
-
-  function updateProgress() {
-    const done = JSON.parse(localStorage.getItem("ml-roadmap-done") || "{}");
-    const n = STEPS.filter((_, i) => done[i]).length;
-    doneCountEl.textContent = n;
-    progressFill.style.width = (n / STEPS.length * 100) + "%";
-  }
-
-  roadmapEl.addEventListener("click", (e) => {
-    const actionEl = e.target.closest("[data-action]");
-    const step = e.target.closest(".step");
-    if (!actionEl || !step) return;
-    const i = Number(step.dataset.index);
-    if (actionEl.dataset.action === "toggle") step.classList.toggle("open");
-    else if (actionEl.dataset.action === "done") {
-      e.stopPropagation();
-      const done = JSON.parse(localStorage.getItem("ml-roadmap-done") || "{}");
-      done[i] = !done[i];
-      localStorage.setItem("ml-roadmap-done", JSON.stringify(done));
-      renderRoadmap();
-      updateProgress();
-      roadmapEl.querySelector(`.step[data-index="${i}"]`).classList.add("open");
-    }
-  });
-
   const libGrid = document.getElementById("lib-grid");
   const emptyEl = document.getElementById("empty");
   const searchInput = document.getElementById("search-input");
@@ -524,7 +437,10 @@
 
   function renderLibrary() {
     const q = searchInput.value.trim().toLowerCase();
-    const list = effectiveTech().filter(t => (activeCat === "all" || t.cat === activeCat) && (!q || t.name.toLowerCase().includes(q)));
+    const list = effectiveTech().filter(t => {
+      const catOk = activeCat === "all" || (activeCat === "ml" ? ["supervised", "unsupervised", "rl"].includes(t.cat) : t.cat === "deep");
+      return catOk && (!q || t.name.toLowerCase().includes(q));
+    });
     libGrid.innerHTML = list.map(t => `
       <button class="lib-item" data-id="${t.id}">
         <span class="lib-top"><h3>${t.name}</h3><span class="badge ${t.cat}">${CAT_LABEL[t.cat]}</span></span>
@@ -594,6 +510,8 @@
   function switchTab(tab) {
     document.querySelectorAll("#m-tabs .tab-btn").forEach(b => b.classList.toggle("active", b.dataset.tab === tab));
     document.querySelectorAll(".tab-pane").forEach(p => p.classList.toggle("active", p.dataset.pane === tab));
+    if (tab !== "demo") { if (demoHandle && demoHandle.stop) demoHandle.stop(); }
+    else if (demoHandle && demoHandle.restart) demoHandle.restart();
   }
 
   function openModal(id) {
@@ -616,6 +534,21 @@
   document.getElementById("m-tabs").addEventListener("click", (e) => { const btn = e.target.closest(".tab-btn"); if (btn) switchTab(btn.dataset.tab); });
   document.getElementById("m-copy").addEventListener("click", () => navigator.clipboard.writeText(mCode.textContent).then(() => showToast("代码已复制")));
   document.getElementById("m-replay").addEventListener("click", () => { if (demoHandle && demoHandle.restart) demoHandle.restart(); });
+  document.getElementById("m-upload").addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const parsed = parseCSV(reader.result);
+      if (!parsed.numCols.length) { showToast("未找到数值列"); return; }
+      if (demoHandle && demoHandle.stop) demoHandle.stop();
+      demoHandle = null;
+      runUploaded(mDemo, current, parsed);
+      document.getElementById("m-upload-note").textContent = "已加载 " + parsed.n + " 行数据：前两列作特征，最后一列作标签（如有）。";
+    };
+    reader.readAsText(file);
+    e.target.value = "";
+  });
 
   mEdit.addEventListener("click", () => {
     editing = !editing;
@@ -745,7 +678,12 @@
     const params = {};
     defs.forEach(c => params[c.key] = c.value);
     el.querySelectorAll("input[type=range]").forEach(inp => {
-      inp.addEventListener("input", () => { params[inp.dataset.k] = +inp.value; const b = el.querySelector(`b[data-v="${inp.dataset.k}"]`); if (b) b.textContent = inp.value; onChange(params); });
+      inp.addEventListener("input", () => {
+        params[inp.dataset.k] = +inp.value;
+        const b = el.querySelector(`b[data-v="${inp.dataset.k}"]`); if (b) b.textContent = inp.value;
+        clearTimeout(inp._debounce);
+        inp._debounce = setTimeout(() => onChange(params), 160);
+      });
     });
     el.querySelectorAll("select").forEach(sel => sel.addEventListener("change", () => { params[sel.dataset.k] = sel.value; onChange(params); }));
     return params;
@@ -1621,6 +1559,103 @@
     return { note: "示意：强化学习训练曲线，蓝色阴影为波动范围；平滑窗口越大曲线越稳定。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
   }
 
+  function parseCSV(text) {
+    const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    if (lines.length < 2) return { numCols: [], data: [], n: 0 };
+    const header = lines[0].split(/[,;\t]/).map(s => s.trim());
+    const data = lines.slice(1).map(l => l.split(/[,;\t]/).map(v => { const n = Number(v.trim()); return isNaN(n) ? null : n; }));
+    const numCols = [];
+    for (let c = 0; c < header.length; c++) if (data.some(r => r[c] !== null)) numCols.push(c);
+    return { header, data, numCols, n: data.length };
+  }
+
+  function runUploaded(canvas, tech, parsed) {
+    const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+    const pad = { l: 46, r: 18, t: 30, b: 38 };
+    const cols = parsed.numCols;
+    const fx = cols[0], fy = cols[1] !== undefined ? cols[1] : cols[0];
+    const target = cols.length > 2 ? cols[cols.length - 1] : null;
+    const rows = parsed.data.filter(r => r[fx] != null && r[fy] != null && (target == null || r[target] != null));
+    const noteEl = document.getElementById("m-demo-note");
+
+    const regression = () => {
+      const xc = fx, yc = target || fy;
+      const rr = rows.filter(r => r[xc] != null && r[yc] != null);
+      const xs = rr.map(r => r[xc]), ys = rr.map(r => r[yc]);
+      const xr = [Math.min(...xs) - 1, Math.max(...xs) + 1], yr = [Math.min(...ys) - 1, Math.max(...ys) + 1];
+      const pl = plot(ctx, W, H, pad, xr, yr, { x: parsed.header[xc], y: parsed.header[yc] });
+      const mx = xs.reduce((s, v) => s + v, 0) / xs.length, my = ys.reduce((s, v) => s + v, 0) / ys.length;
+      let num = 0, den = 0;
+      rr.forEach(r => { num += (r[xc] - mx) * (r[yc] - my); den += (r[xc] - mx) ** 2; });
+      const slope = den ? num / den : 0, icept = my - slope * mx;
+      rr.forEach(r => { ctx.fillStyle = "#2563eb"; ctx.beginPath(); ctx.arc(pl.X(r[xc]), pl.Y(r[yc]), 3, 0, Math.PI * 2); ctx.fill(); });
+      ctx.strokeStyle = "#dc2626"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(pl.X(xr[0]), pl.Y(slope * xr[0] + icept)); ctx.lineTo(pl.X(xr[1]), pl.Y(slope * xr[1] + icept)); ctx.stroke();
+      let sse = 0, sst = 0;
+      rr.forEach(r => { const p = slope * r[xc] + icept; sse += (p - r[yc]) ** 2; sst += (r[yc] - my) ** 2; });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("线性拟合  R² = " + (1 - sse / (sst || 1)).toFixed(3), pad.l, pad.t - 10);
+      noteEl.textContent = "已用你的数据完成线性回归：蓝色为数据点，红线为拟合直线。";
+    };
+
+    const classify = () => {
+      const vals = [...new Set(rows.map(r => r[target]))].slice(0, 2);
+      const y = rows.map(r => vals.indexOf(r[target]));
+      const X = rows.map(r => [r[fx], r[fy]]);
+      const model = trainLogistic(X, y, { iters: 500, lr: .6 });
+      const x0 = Math.min(...X.map(q => q[0])) - 1, x1 = Math.max(...X.map(q => q[0])) + 1;
+      const y0 = Math.min(...X.map(q => q[1])) - 1, y1 = Math.max(...X.map(q => q[1])) + 1;
+      const pl = plot(ctx, W, H, pad, [x0, x1], [y0, y1], { x: parsed.header[fx], y: parsed.header[fy] });
+      for (let i = 0; i < 110; i++) for (let j = 0; j < 68; j++) {
+        const x = x0 + (x1 - x0) * i / 110, yy = y0 + (y1 - y0) * j / 68;
+        ctx.fillStyle = css(diverging(model([x, yy])));
+        ctx.fillRect(pl.x0 + i * pl.pw / 110, pl.y0 + j * pl.ph / 68, pl.pw / 110 + 1, pl.ph / 68 + 1);
+      }
+      let correct = 0;
+      X.forEach((q, i) => {
+        ctx.fillStyle = y[i] === 0 ? "#0b3d35" : "#56122d";
+        ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 3, 0, Math.PI * 2); ctx.fill();
+        if ((model(q) >= .5 ? 1 : 0) === y[i]) correct++;
+      });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("逻辑回归 准确率 = " + (correct / X.length * 100).toFixed(1) + "%", pad.l, pad.t - 10);
+      noteEl.textContent = "已用你的数据训练逻辑回归：背景为概率场，圆点为样本，可看到分类边界和准确率。";
+    };
+
+    const cluster = () => {
+      const X = rows.map(r => [r[fx], r[fy]]);
+      const K = 3;
+      let cents = X.slice(0, K).map(q => [...q]);
+      let assign = new Array(X.length).fill(0);
+      for (let it = 0; it < 40; it++) {
+        X.forEach((q, i) => { let bi = 0, bd = 1e9; cents.forEach((c, j) => { const d = (q[0] - c[0]) ** 2 + (q[1] - c[1]) ** 2; if (d < bd) { bd = d; bi = j; } }); assign[i] = bi; });
+        const sums = Array.from({ length: K }, () => [0, 0, 0]);
+        X.forEach((q, i) => { sums[assign[i]][0] += q[0]; sums[assign[i]][1] += q[1]; sums[assign[i]][2]++; });
+        cents = cents.map((c, j) => sums[j][2] ? [sums[j][0] / sums[j][2], sums[j][1] / sums[j][2]] : c);
+      }
+      const x0 = Math.min(...X.map(q => q[0])) - 1, x1 = Math.max(...X.map(q => q[0])) + 1;
+      const y0 = Math.min(...X.map(q => q[1])) - 1, y1 = Math.max(...X.map(q => q[1])) + 1;
+      const pl = plot(ctx, W, H, pad, [x0, x1], [y0, y1], { x: parsed.header[fx], y: parsed.header[fy] });
+      const pal = ["#2563eb", "#dc2626", "#16a34a"];
+      let inertia = 0;
+      X.forEach((q, i) => { inertia += (q[0] - cents[assign[i]][0]) ** 2 + (q[1] - cents[assign[i]][1]) ** 2; ctx.fillStyle = pal[assign[i] % 3]; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 3, 0, Math.PI * 2); ctx.fill(); });
+      cents.forEach(c => { ctx.fillStyle = "#0f172a"; ctx.beginPath(); ctx.moveTo(pl.X(c[0]), pl.Y(c[1]) - 6); ctx.lineTo(pl.X(c[0]) + 5, pl.Y(c[1])); ctx.lineTo(pl.X(c[0]), pl.Y(c[1]) + 6); ctx.lineTo(pl.X(c[0]) - 5, pl.Y(c[1])); ctx.closePath(); ctx.fill(); });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("K-Means 惯量 = " + inertia.toFixed(1), pad.l, pad.t - 10);
+      noteEl.textContent = "已用你的数据完成 K-Means 聚类（K=3），不同颜色代表不同簇，黑色菱形为簇中心。";
+    };
+
+    if (!rows.length) { noteEl.textContent = "数据无法解析：请确保前两列是数值特征。"; return; }
+    if (tech.id === "linear-regression") return regression();
+    if (tech.cat === "supervised" && target != null && new Set(rows.map(r => r[target])).size <= 2) return classify();
+    if (tech.cat === "unsupervised") return cluster();
+    const x0 = Math.min(...rows.map(r => r[fx])) - 1, x1 = Math.max(...rows.map(r => r[fx])) + 1;
+    const y0 = Math.min(...rows.map(r => r[fy])) - 1, y1 = Math.max(...rows.map(r => r[fy])) + 1;
+    const pl = plot(ctx, W, H, pad, [x0, x1], [y0, y1], { x: parsed.header[fx], y: parsed.header[fy] });
+    rows.forEach(r => { ctx.fillStyle = "#2563eb"; ctx.beginPath(); ctx.arc(pl.X(r[fx]), pl.Y(r[fy]), 3, 0, Math.PI * 2); ctx.fill(); });
+    noteEl.textContent = "已加载你的数据并绘制特征分布；该模型的在线训练版本将随后补充。";
+  }
+
   function startDemo(canvas, el, tech) {
     const t = tech.demo;
     switch (t.type) {
@@ -1680,8 +1715,6 @@
   function netStart() { netResize(); netDraw(); }
   window.addEventListener("resize", () => { if (netRaf) cancelAnimationFrame(netRaf); netStart(); });
 
-  renderRoadmap();
-  updateProgress();
   renderLibrary();
   netStart();
 </script>
