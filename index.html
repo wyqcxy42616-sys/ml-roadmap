@@ -48,37 +48,23 @@
   }
   .topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; white-space: nowrap; }
-  .brand-mark {
-    width: 30px; height: 30px; border-radius: 7px; background: var(--ink); color: #fff;
-    display: grid; place-items: center;
-  }
+  .brand-mark { width: 30px; height: 30px; border-radius: 7px; background: var(--ink); color: #fff; display: grid; place-items: center; }
   .nav { display: flex; align-items: center; gap: 4px; }
   .nav a { padding: 7px 11px; border-radius: 7px; color: var(--muted); font-size: 14px; white-space: nowrap; }
   .nav a:hover { color: var(--ink); background: #eef1ee; }
-  .progress-pill {
-    display: flex; align-items: center; gap: 8px; padding: 6px 10px;
-    border: 1px solid var(--line); border-radius: 999px; background: #fff;
-    font-size: 13px; color: var(--muted); white-space: nowrap;
-  }
+  .progress-pill { display: flex; align-items: center; gap: 8px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; background: #fff; font-size: 13px; color: var(--muted); white-space: nowrap; }
   .progress-pill strong { color: var(--ink); }
   .progress-track { width: 64px; height: 6px; border-radius: 999px; background: #e7ebe7; overflow: hidden; }
   .progress-fill { height: 100%; width: 0; border-radius: 999px; background: var(--teal); transition: width .25s ease; }
 
-  .hero { position: relative; min-height: 620px; display: flex; align-items: center; color: #eef5f1; overflow: hidden; background: #0d1512; }
+  .hero { position: relative; min-height: 600px; display: flex; align-items: center; color: #eef5f1; overflow: hidden; background: #0d1512; }
   #net { position: absolute; inset: 0; width: 100%; height: 100%; }
   .hero-inner { position: relative; z-index: 1; padding: 64px 0 80px; width: 100%; }
-  .eyebrow {
-    display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px;
-    border: 1px solid rgba(255,255,255,.22); border-radius: 999px;
-    font-size: 13px; color: #d7e7df; background: rgba(255,255,255,.06);
-  }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 999px; font-size: 13px; color: #d7e7df; background: rgba(255,255,255,.06); }
   .hero h1 { margin: 20px 0 14px; font-size: 44px; line-height: 1.12; letter-spacing: 0; max-width: 720px; }
-  .hero-sub { margin: 0; max-width: 640px; font-size: 17px; color: #c4d4cc; }
+  .hero-sub { margin: 0; max-width: 660px; font-size: 17px; color: #c4d4cc; }
   .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px;
-    border-radius: var(--radius); border: 1px solid transparent; font-size: 15px; cursor: pointer;
-  }
+  .btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: var(--radius); border: 1px solid transparent; font-size: 15px; cursor: pointer; }
   .btn-primary { background: #5eead4; color: #0b2822; font-weight: 600; }
   .btn-primary:hover { background: #7df3df; }
   .btn-ghost { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.28); color: #eef5f1; }
@@ -113,18 +99,12 @@
   .roadmap { display: grid; gap: 12px; }
   .step { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow: hidden; }
   .step.done { border-color: #bcd8cf; }
-  .step-head {
-    width: 100%; display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 14px;
-    padding: 16px 18px; background: none; border: 0; cursor: pointer; text-align: left;
-  }
+  .step-head { width: 100%; display: grid; grid-template-columns: auto 1fr auto auto; align-items: center; gap: 14px; padding: 16px 18px; background: none; border: 0; cursor: pointer; text-align: left; }
   .step-num { width: 34px; height: 34px; border-radius: 8px; background: var(--ink); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 14px; }
   .step-title { min-width: 0; }
   .step-title h3 { margin: 0; font-size: 16px; }
   .step-title p { margin: 2px 0 0; font-size: 13px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .step-toggle {
-    display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px;
-    border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--muted); font-size: 13px; white-space: nowrap;
-  }
+  .step-toggle { display: inline-flex; align-items: center; gap: 6px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--muted); font-size: 13px; white-space: nowrap; }
   .step.done .step-toggle { border-color: #a8cfc2; color: var(--teal); background: var(--teal-soft); }
   .step-chev { color: var(--muted); transition: transform .18s ease; }
   .step.open .step-chev { transform: rotate(180deg); }
@@ -154,10 +134,7 @@
   .search input { height: 38px; width: 230px; max-width: 60vw; padding: 0 12px 0 36px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font-size: 14px; color: var(--ink); }
   .search input:focus { outline: 2px solid var(--teal); outline-offset: 0; border-color: var(--teal); }
   .lib-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
-  .lib-item {
-    border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface);
-    padding: 16px; cursor: pointer; text-align: left; transition: border-color .15s ease, box-shadow .15s ease;
-  }
+  .lib-item { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 16px; cursor: pointer; text-align: left; transition: border-color .15s ease, box-shadow .15s ease; }
   .lib-item:hover { border-color: #9dc8bd; box-shadow: 0 2px 10px rgba(15,118,110,.08); }
   .lib-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .lib-item h3 { margin: 0; font-size: 15px; }
@@ -170,22 +147,13 @@
   .lib-meta { display: block; margin-top: 10px; font-size: 12px; color: var(--teal); }
   .empty { display: none; grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--radius); }
 
-  .modal-backdrop {
-    position: fixed; inset: 0; z-index: 100; background: rgba(10,18,15,.5);
-    display: flex; align-items: center; justify-content: center; padding: 20px;
-  }
+  .modal-backdrop { position: fixed; inset: 0; z-index: 100; background: rgba(10,18,15,.5); display: flex; align-items: center; justify-content: center; padding: 20px; }
   .modal-backdrop[hidden] { display: none; }
-  .modal {
-    width: min(760px, 100%); max-height: min(86vh, 900px); display: flex; flex-direction: column;
-    background: var(--surface); border-radius: 10px; overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,.25);
-  }
+  .modal { width: min(800px, 100%); max-height: min(88vh, 960px); display: flex; flex-direction: column; background: var(--surface); border-radius: 10px; overflow: hidden; box-shadow: 0 24px 70px rgba(0,0,0,.25); }
   .modal-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; border-bottom: 1px solid var(--line); }
   .modal-title { display: flex; align-items: center; gap: 10px; min-width: 0; }
   .modal-title h2 { margin: 0; font-size: 19px; }
-  .icon-btn {
-    width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 8px; background: #fff;
-    color: var(--muted); cursor: pointer; display: grid; place-items: center; font-size: 18px;
-  }
+  .icon-btn { width: 36px; height: 36px; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--muted); cursor: pointer; display: grid; place-items: center; font-size: 18px; }
   .icon-btn:hover { background: #f1f4f1; color: var(--ink); }
   .tabs { display: flex; gap: 4px; padding: 0 20px; border-bottom: 1px solid var(--line); overflow-x: auto; }
   .tab-btn { padding: 12px 14px; background: none; border: 0; border-bottom: 2px solid transparent; color: var(--muted); cursor: pointer; font-size: 14px; white-space: nowrap; }
@@ -196,31 +164,28 @@
   .def-text { font-size: 15px; line-height: 1.8; }
   .code-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
   .code-head span { font-size: 13px; color: var(--muted); }
-  pre {
-    margin: 0; padding: 16px; border-radius: 8px; background: #101916; color: #d7e8e1;
-    overflow-x: auto; font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace;
-    font-size: 13px; line-height: 1.6; white-space: pre;
-  }
+  pre { margin: 0; padding: 16px; border-radius: 8px; background: #101916; color: #d7e8e1; overflow-x: auto; font-family: "JetBrains Mono", "Cascadia Code", Consolas, monospace; font-size: 13px; line-height: 1.6; white-space: pre; }
   .copy-btn { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border: 1px solid var(--line); border-radius: 7px; background: #fff; color: var(--muted); cursor: pointer; font-size: 13px; }
   .param-table { width: 100%; border-collapse: collapse; font-size: 14px; }
   .param-table th, .param-table td { padding: 10px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
   .param-table th { color: var(--muted); font-size: 12.5px; white-space: nowrap; }
   .param-table td.mono { font-family: Consolas, monospace; color: #0c5d55; white-space: nowrap; }
-  .demo-box { border: 1px solid var(--line); border-radius: var(--radius); background: #fbfcfa; overflow: hidden; }
-  .demo-canvas { display: block; width: 100%; aspect-ratio: 16 / 9; background: #0d1512; }
+  .demo-panel { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: #fff; }
+  .demo-controls { display: flex; flex-wrap: wrap; gap: 12px 18px; padding: 12px 14px; border-bottom: 1px solid var(--line); background: #fbfcfb; }
+  .ctl { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); }
+  .ctl b { color: var(--ink); min-width: 30px; text-align: right; font-variant-numeric: tabular-nums; }
+  .ctl input[type=range] { width: 128px; accent-color: var(--teal); }
+  .ctl select { height: 30px; border: 1px solid var(--line); border-radius: 6px; background: #fff; font-size: 13px; padding: 0 6px; color: var(--ink); }
+  .demo-canvas { display: block; width: 100%; aspect-ratio: 16 / 9; background: #fff; }
   .demo-note { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
-  .demo-actions { display: flex; justify-content: flex-end; margin-top: 8px; }
+  .demo-actions { display: flex; justify-content: flex-end; margin-top: 10px; }
   .edit-field { width: 100%; min-height: 180px; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; font: 14px/1.7 Consolas, "Microsoft YaHei", monospace; resize: vertical; }
   .edit-field.plain { font-family: inherit; }
   .form-hint { margin: 8px 0 0; font-size: 12.5px; color: var(--muted); }
   .modal-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--line); }
   .spacer { flex: 1; }
   .modal-footer .btn { height: 38px; padding: 0 14px; font-size: 14px; }
-  .toast {
-    position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 200;
-    background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; font-size: 14px;
-    opacity: 0; pointer-events: none; transition: opacity .2s ease;
-  }
+  .toast { position: fixed; left: 50%; bottom: 28px; transform: translateX(-50%); z-index: 200; background: var(--ink); color: #fff; padding: 10px 16px; border-radius: 8px; font-size: 14px; opacity: 0; pointer-events: none; transition: opacity .2s ease; }
   .toast.show { opacity: 1; }
 
   footer { padding: 28px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
@@ -233,7 +198,7 @@
   }
   @media (max-width: 640px) {
     .wrap { width: calc(100% - 28px); }
-    .hero { min-height: 580px; }
+    .hero { min-height: 560px; }
     .hero h1 { font-size: 32px; }
     .hero-sub { font-size: 15px; }
     .hero-stats { grid-template-columns: repeat(2, auto); gap: 18px 28px; }
@@ -251,10 +216,11 @@
     .progress-pill { display: none; }
     .modal-backdrop { padding: 0; align-items: flex-end; }
     .modal { width: 100%; max-height: 92vh; border-radius: 12px 12px 0 0; }
-    .modal-body { padding: 16px; }
+    .modal-body { padding: 14px; }
     .tabs { padding: 0 10px; }
     .modal-head { padding: 14px 16px; }
     .modal-footer { padding: 12px 16px; }
+    .ctl input[type=range] { width: 90px; }
   }
 </style>
 </head>
@@ -302,7 +268,7 @@
     <div class="wrap hero-inner">
       <span class="eyebrow"><svg class="icon icon-sm"><use href="#i-target"/></svg>从入门到落地 · 分步行动指南</span>
       <h1>机器学习技术全景</h1>
-      <p class="hero-sub">把机器学习拆成清晰的步骤：每一步该学什么、动手练什么、用哪些工具，以及每个模型的定义、代码、参数和可视化结果。</p>
+      <p class="hero-sub">把机器学习拆成清晰的步骤：每一步该学什么、动手练什么、用哪些工具，以及每个模型的定义、代码、可调参数和动态可视化。</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#library">进入技术库 <svg class="icon icon-sm"><use href="#i-arrow"/></svg></a>
         <a class="btn btn-ghost" href="#roadmap"><svg class="icon icon-sm"><use href="#i-book"/></svg>看学习路线</a>
@@ -384,7 +350,7 @@
       <div class="section-head">
         <span class="section-kicker"><svg class="icon icon-sm"><use href="#i-grid"/></svg>技术库 · 可编辑</span>
         <h2>每个模型的四块核心内容</h2>
-        <p>点击任意模型查看定义、核心代码、关键参数和可视化结果。点“编辑”可以修改内容，改动保存在当前浏览器，并可导出/导入 JSON。</p>
+        <p>点击任意模型查看定义、核心代码、关键参数和动态可视化。可视化支持拖动参数实时调整；点“编辑”可修改文字内容，改动保存在当前浏览器，并可导出/导入 JSON。</p>
       </div>
       <div class="library-bar">
         <div class="filters" id="filters">
@@ -431,7 +397,10 @@
           <p class="form-hint">编辑时每行一个参数，格式：参数名 | 含义 | 调参建议</p>
         </section>
         <section class="tab-pane" data-pane="demo">
-          <div class="demo-box"><canvas class="demo-canvas" id="m-demo"></canvas></div>
+          <div class="demo-panel">
+            <div class="demo-controls" id="m-controls"></div>
+            <canvas class="demo-canvas" id="m-demo"></canvas>
+          </div>
           <div class="demo-actions"><button class="copy-btn" id="m-replay"><svg class="icon icon-sm"><use href="#i-refresh"/></svg>重播</button></div>
           <p class="demo-note" id="m-demo-note"></p>
         </section>
@@ -501,13 +470,7 @@
   function saveOverrides(o) { localStorage.setItem(STORE_KEY, JSON.stringify(o)); }
   let overrides = loadOverrides();
   function effectiveTech() { return TECH.map(t => Object.assign({}, t, overrides[t.id] || {})); }
-
-  function showToast(msg) {
-    toastEl.textContent = msg;
-    toastEl.classList.add("show");
-    clearTimeout(toastEl._t);
-    toastEl._t = setTimeout(() => toastEl.classList.remove("show"), 2200);
-  }
+  function showToast(msg) { toastEl.textContent = msg; toastEl.classList.add("show"); clearTimeout(toastEl._t); toastEl._t = setTimeout(() => toastEl.classList.remove("show"), 2200); }
 
   function renderRoadmap() {
     const done = JSON.parse(localStorage.getItem("ml-roadmap-done") || "{}");
@@ -542,9 +505,8 @@
     const step = e.target.closest(".step");
     if (!actionEl || !step) return;
     const i = Number(step.dataset.index);
-    if (actionEl.dataset.action === "toggle") {
-      step.classList.toggle("open");
-    } else if (actionEl.dataset.action === "done") {
+    if (actionEl.dataset.action === "toggle") step.classList.toggle("open");
+    else if (actionEl.dataset.action === "done") {
       e.stopPropagation();
       const done = JSON.parse(localStorage.getItem("ml-roadmap-done") || "{}");
       done[i] = !done[i];
@@ -567,7 +529,7 @@
       <button class="lib-item" data-id="${t.id}">
         <span class="lib-top"><h3>${t.name}</h3><span class="badge ${t.cat}">${CAT_LABEL[t.cat]}</span></span>
         <p>${t.summary}</p>
-        <span class="lib-meta">查看定义 · 代码 · 参数 · 可视化</span>
+        <span class="lib-meta">查看定义 · 代码 · 参数 · 动态可视化</span>
       </button>`).join("");
     emptyEl.style.display = list.length ? "none" : "block";
   }
@@ -582,7 +544,6 @@
   });
   searchInput.addEventListener("input", renderLibrary);
 
-  // Modal state
   const modal = document.getElementById("modal");
   const mName = document.getElementById("m-name");
   const mCat = document.getElementById("m-cat");
@@ -593,13 +554,12 @@
   const mParams = document.getElementById("m-params");
   const mParamsEdit = document.getElementById("m-params-edit");
   const mDemo = document.getElementById("m-demo");
+  const mControls = document.getElementById("m-controls");
   const mDemoNote = document.getElementById("m-demo-note");
   const mEdit = document.getElementById("m-edit");
   const mEditLabel = document.getElementById("m-edit-label");
   const mSave = document.getElementById("m-save");
-  let current = null;
-  let editing = false;
-  let demoHandle = null;
+  let current = null, editing = false, demoHandle = null;
 
   function renderParams(params) {
     const rows = params.map(p => `<tr><td class="mono">${p[0]}</td><td>${p[1]}</td><td>${p[2]}</td></tr>`).join("");
@@ -613,7 +573,6 @@
     mEdit.hidden = false;
     mSave.hidden = true;
     mDef.hidden = false; mDefEdit.hidden = true;
-    mCode.closest("div").previousElementSibling.hidden = false;
     mCode.parentElement.hidden = false; mCodeEdit.hidden = true;
     mParams.hidden = false; mParamsEdit.hidden = true;
     mName.textContent = tech.name;
@@ -627,7 +586,8 @@
     mParamsEdit.value = (tech.params || []).map(p => p.join(" | ")).join("\n");
     switchTab("def");
     if (demoHandle && demoHandle.stop) demoHandle.stop();
-    demoHandle = startDemo(mDemo, tech);
+    mControls.innerHTML = "";
+    demoHandle = startDemo(mDemo, mControls, tech);
     mDemoNote.textContent = demoHandle.note || "";
   }
 
@@ -649,23 +609,13 @@
     if (demoHandle) { if (demoHandle.stop) demoHandle.stop(); demoHandle = null; }
   }
 
-  libGrid.addEventListener("click", (e) => {
-    const item = e.target.closest(".lib-item");
-    if (item) openModal(item.dataset.id);
-  });
+  libGrid.addEventListener("click", (e) => { const item = e.target.closest(".lib-item"); if (item) openModal(item.dataset.id); });
   document.getElementById("m-close").addEventListener("click", closeModal);
   modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !modal.hidden) closeModal(); });
-  document.getElementById("m-tabs").addEventListener("click", (e) => {
-    const btn = e.target.closest(".tab-btn");
-    if (btn) switchTab(btn.dataset.tab);
-  });
-  document.getElementById("m-copy").addEventListener("click", () => {
-    navigator.clipboard.writeText(mCode.textContent).then(() => showToast("代码已复制"));
-  });
-  document.getElementById("m-replay").addEventListener("click", () => {
-    if (demoHandle && demoHandle.restart) demoHandle.restart();
-  });
+  document.getElementById("m-tabs").addEventListener("click", (e) => { const btn = e.target.closest(".tab-btn"); if (btn) switchTab(btn.dataset.tab); });
+  document.getElementById("m-copy").addEventListener("click", () => navigator.clipboard.writeText(mCode.textContent).then(() => showToast("代码已复制")));
+  document.getElementById("m-replay").addEventListener("click", () => { if (demoHandle && demoHandle.restart) demoHandle.restart(); });
 
   mEdit.addEventListener("click", () => {
     editing = !editing;
@@ -686,21 +636,15 @@
       const parts = line.split("|").map(s => s.trim());
       return [parts[0] || "参数", parts[1] || "", parts[2] || ""];
     });
-    overrides[current.id] = {
-      definition: mDefEdit.value.trim(),
-      code: mCodeEdit.value,
-      params: params
-    };
+    overrides[current.id] = { definition: mDefEdit.value.trim(), code: mCodeEdit.value, params: params };
     saveOverrides(overrides);
-    const saved = effectiveTech().find(t => t.id === current.id);
-    fillModal(saved);
+    fillModal(effectiveTech().find(t => t.id === current.id));
     renderLibrary();
     showToast("已保存到当前浏览器");
   });
 
   document.getElementById("m-export").addEventListener("click", () => {
-    const data = JSON.stringify(effectiveTech(), null, 2);
-    const blob = new Blob([data], { type: "application/json" });
+    const blob = new Blob([JSON.stringify(effectiveTech(), null, 2)], { type: "application/json" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "ml-tech-library.json";
@@ -723,9 +667,7 @@
         renderLibrary();
         if (current) fillModal(effectiveTech().find(t => t.id === current.id) || current);
         showToast("已导入 " + arr.length + " 条内容");
-      } catch (err) {
-        showToast("导入失败：JSON 格式不正确");
-      }
+      } catch (err) { showToast("导入失败：JSON 格式不正确"); }
       e.target.value = "";
     };
     reader.readAsText(file);
@@ -739,27 +681,81 @@
     showToast("已恢复默认内容");
   });
 
-  // Demo engine
+  // ===================== 可视化引擎 =====================
   function rng(seed) { let s = seed >>> 0; return () => ((s = (s * 1664525 + 1013904223) >>> 0) / 4294967296); }
-  function setupCanvas(canvas, w, h) {
+  function gauss(r) { let u = 0, v = 0; while (u === 0) u = r(); while (v === 0) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); }
+  function baseCanvas(canvas, W = 640, H = 360) {
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = w * dpr; canvas.height = h * dpr;
+    canvas.width = W * dpr; canvas.height = H * dpr;
     const ctx = canvas.getContext("2d");
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    ctx.clearRect(0, 0, w, h);
-    return { ctx, w, h };
+    ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+    return { ctx, W, H };
   }
-  function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
   function css(rgb) { return `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`; }
-  const C0 = [45, 212, 191], C1 = [244, 114, 182];
+  function mix(a, b, t) { return a.map((v, i) => Math.round(v + (b[i] - v) * t)); }
+  function fmt(v) { const a = Math.abs(v); return (a >= 100 ? v.toFixed(0) : a >= 10 ? v.toFixed(1) : v.toFixed(2)); }
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+  function diverging(p) { const t = clamp(p, 0, 1); return t < .5 ? mix([37, 99, 235], [255, 255, 255], t * 2) : mix([255, 255, 255], [220, 38, 38], (t - .5) * 2); }
 
-  function makeBlobs(n, seed) {
-    const r = rng(seed);
-    const g = () => { let u = 0, v = 0; while (u === 0) u = r(); while (v === 0) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
-    const X = [], y = [];
+  function plot(ctx, W, H, pad, xr, yr, labels = {}) {
+    const x0 = pad.l, y0 = pad.t, pw = W - pad.l - pad.r, ph = H - pad.t - pad.b;
+    const X = x => x0 + (x - xr[0]) / (xr[1] - xr[0]) * pw;
+    const Y = y => y0 + (yr[1] - y) / (yr[1] - yr[0]) * ph;
+    ctx.fillStyle = "#fff"; ctx.fillRect(x0, y0, pw, ph);
+    ctx.strokeStyle = "#eef2f0"; ctx.lineWidth = 1;
+    for (let i = 0; i <= 5; i++) { const x = xr[0] + (xr[1] - xr[0]) * i / 5; ctx.beginPath(); ctx.moveTo(X(x), y0); ctx.lineTo(X(x), y0 + ph); ctx.stroke(); }
+    for (let i = 0; i <= 4; i++) { const y = yr[0] + (yr[1] - yr[0]) * i / 4; ctx.beginPath(); ctx.moveTo(x0, Y(y)); ctx.lineTo(x0 + pw, Y(y)); ctx.stroke(); }
+    ctx.strokeStyle = "#475569"; ctx.strokeRect(x0, y0, pw, ph);
+    ctx.fillStyle = "#64748b"; ctx.font = "10px sans-serif"; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic";
+    for (let i = 0; i <= 5; i++) { const x = xr[0] + (xr[1] - xr[0]) * i / 5; ctx.fillText(fmt(x), X(x), y0 + ph + 13); }
+    ctx.textAlign = "right"; ctx.textBaseline = "middle";
+    for (let i = 0; i <= 4; i++) { const y = yr[0] + (yr[1] - yr[0]) * i / 4; ctx.fillText(fmt(y), x0 - 6, Y(y)); }
+    ctx.textAlign = "center";
+    if (labels.x) ctx.fillText(labels.x, x0 + pw / 2, H - 5);
+    if (labels.y) { ctx.save(); ctx.translate(11, y0 + ph / 2); ctx.rotate(-Math.PI / 2); ctx.fillText(labels.y, 0, 0); ctx.restore(); }
+    return { X, Y, x0, y0, pw, ph };
+  }
+
+  function colorbar(ctx, x, y, w, h) {
+    for (let i = 0; i < w; i++) { ctx.fillStyle = css(diverging(i / (w - 1))); ctx.fillRect(x + i, y, 1, h); }
+    ctx.strokeStyle = "#cbd5e1"; ctx.strokeRect(x, y, w, h);
+    ctx.fillStyle = "#64748b"; ctx.font = "9px sans-serif"; ctx.textAlign = "center";
+    ctx.fillText("0", x, y + h + 10); ctx.fillText("1", x + w, y + h + 10);
+  }
+
+  function legend(ctx, x, y, items) {
+    let cx = x;
+    ctx.font = "11px sans-serif"; ctx.textBaseline = "middle";
+    items.forEach(it => {
+      ctx.fillStyle = it.c; ctx.fillRect(cx, y, 10, 10);
+      ctx.fillStyle = "#334155"; ctx.textAlign = "left";
+      ctx.fillText(it.label, cx + 14, y + 5);
+      cx += 14 + 8 + ctx.measureText(it.label).width + 16;
+    });
+  }
+
+  function buildControls(el, defs, onChange) {
+    el.innerHTML = defs.map(c => {
+      if (c.type === "select") {
+        return `<label class="ctl"><span>${c.label}</span><select data-k="${c.key}">${c.options.map(o => `<option value="${o}"${String(o) === String(c.value) ? " selected" : ""}>${o}</option>`).join("")}</select></label>`;
+      }
+      return `<label class="ctl"><span>${c.label} <b data-v="${c.key}">${c.value}</b></span><input type="range" data-k="${c.key}" min="${c.min}" max="${c.max}" step="${c.step || 1}" value="${c.value}"></label>`;
+    }).join("");
+    const params = {};
+    defs.forEach(c => params[c.key] = c.value);
+    el.querySelectorAll("input[type=range]").forEach(inp => {
+      inp.addEventListener("input", () => { params[inp.dataset.k] = +inp.value; const b = el.querySelector(`b[data-v="${inp.dataset.k}"]`); if (b) b.textContent = inp.value; onChange(params); });
+    });
+    el.querySelectorAll("select").forEach(sel => sel.addEventListener("change", () => { params[sel.dataset.k] = sel.value; onChange(params); }));
+    return params;
+  }
+
+  function makeBlobs(n, seed, centers = [[-2, -1], [2, 1]], sigma = .95) {
+    const r = rng(seed), X = [], y = [];
     for (let i = 0; i < n; i++) {
-      const c = i % 2 === 0 ? [-2, -1] : [2, 1];
-      X.push([c[0] + g() * 0.95, c[1] + g() * 0.95]);
+      const c = centers[i % 2];
+      X.push([c[0] + gauss(r) * sigma, c[1] + gauss(r) * sigma]);
       y.push(i % 2 === 0 ? 0 : 1);
     }
     return { X, y };
@@ -767,50 +763,61 @@
 
   function standardize(X) {
     const n = X.length, mu = [0, 0], sd = [1, 1];
-    for (let f = 0; f < 2; f++) {
-      mu[f] = X.reduce((s, p) => s + p[f], 0) / n;
-      sd[f] = Math.sqrt(X.reduce((s, p) => s + (p[f] - mu[f]) ** 2, 0) / n) || 1;
-    }
+    for (let f = 0; f < 2; f++) { mu[f] = X.reduce((s, p) => s + p[f], 0) / n; sd[f] = Math.sqrt(X.reduce((s, p) => s + (p[f] - mu[f]) ** 2, 0) / n) || 1; }
     return { Xs: X.map(p => [(p[0] - mu[0]) / sd[0], (p[1] - mu[1]) / sd[1]]), mu, sd };
   }
 
-  function trainLogistic(X, y) {
-    const { Xs, mu, sd } = standardize(X);
-    const n = X.length;
+  function trainLogistic(X, y, p) {
+    const { Xs, mu, sd } = standardize(X), n = X.length;
     let w = [0, 0], b = 0;
-    for (let it = 0; it < 500; it++) {
+    for (let it = 0; it < p.iters; it++) {
       let gw = [0, 0], gb = 0;
       for (let i = 0; i < n; i++) {
         const z = w[0] * Xs[i][0] + w[1] * Xs[i][1] + b;
-        const p = 1 / (1 + Math.exp(-z));
-        const e = p - y[i];
+        const e = 1 / (1 + Math.exp(-z)) - y[i];
         gw[0] += e * Xs[i][0]; gw[1] += e * Xs[i][1]; gb += e;
       }
-      w[0] -= 0.6 * gw[0] / n; w[1] -= 0.6 * gw[1] / n; b -= 0.6 * gb / n;
+      w[0] -= p.lr * gw[0] / n; w[1] -= p.lr * gw[1] / n; b -= p.lr * gb / n;
     }
     return x => { const a = (x[0] - mu[0]) / sd[0], c = (x[1] - mu[1]) / sd[1]; return 1 / (1 + Math.exp(-(w[0] * a + w[1] * c + b))); };
   }
 
-  function trainSVM(X, y) {
-    const { Xs, mu, sd } = standardize(X);
-    const yy = y.map(v => v === 0 ? -1 : 1);
-    const n = X.length;
+  function trainSVM(X, y, p) {
+    const { Xs, mu, sd } = standardize(X), yy = y.map(v => v === 0 ? -1 : 1), n = X.length;
     let w = [0, 0], b = 0;
-    for (let it = 0; it < 800; it++) {
+    const C = Math.pow(10, p.logC);
+    for (let it = 0; it < 900; it++) {
       let gw = [0, 0], gb = 0;
       for (let i = 0; i < n; i++) {
         const m = yy[i] * (w[0] * Xs[i][0] + w[1] * Xs[i][1] + b);
-        if (m < 1) { gw[0] += -yy[i] * Xs[i][0]; gw[1] += -yy[i] * Xs[i][1]; gb += -yy[i]; }
+        if (m < 1) { gw[0] += -C * yy[i] * Xs[i][0]; gw[1] += -C * yy[i] * Xs[i][1]; gb += -C * yy[i]; }
       }
-      gw[0] += 0.01 * w[0]; gw[1] += 0.01 * w[1];
-      w[0] -= 0.05 * gw[0] / n; w[1] -= 0.05 * gw[1] / n; b -= 0.05 * gb / n;
+      gw[0] += w[0]; gw[1] += w[1];
+      w[0] -= .04 * gw[0] / n; w[1] -= .04 * gw[1] / n; b -= .04 * gb / n;
     }
-    return x => { const a = (x[0] - mu[0]) / sd[0], c = (x[1] - mu[1]) / sd[1]; const z = w[0] * a + w[1] * c + b; return 1 / (1 + Math.exp(-z * 3)); };
+    const supports = [];
+    Xs.forEach((x, i) => { const m = yy[i] * (w[0] * x[0] + w[1] * x[1] + b); if (m < 1.05) supports.push(i); });
+    return {
+      predict: x => { const a = (x[0] - mu[0]) / sd[0], c = (x[1] - mu[1]) / sd[1]; const z = w[0] * a + w[1] * c + b; return 1 / (1 + Math.exp(-z * 2.5)); },
+      supports
+    };
   }
 
-  function trainTree(X, y, depth, minLeaf) {
-    const gini = (idxs) => { const m = {}; idxs.forEach(i => m[y[i]] = (m[y[i]] || 0) + 1); let s = 0; for (const k in m) { const p = m[k] / idxs.length; s += p * p; } return 1 - s; };
-    const mode = (arr) => { const m = {}; arr.forEach(v => m[v] = (m[v] || 0) + 1); let best = arr[0], bc = 0; for (const k in m) if (m[k] > bc) { bc = m[k]; best = Number(k); } return best; };
+  function trainKNN(X, y, p) {
+    const metric = p.metric === "manhattan" ? 1 : 2;
+    return x => {
+      const ds = X.map((q, i) => {
+        const d = metric === 1 ? Math.abs(q[0] - x[0]) + Math.abs(q[1] - x[1]) : (q[0] - x[0]) ** 2 + (q[1] - x[1]) ** 2;
+        return { d, y: y[i] };
+      }).sort((a, b) => a.d - b.d);
+      let s = 0; for (let i = 0; i < p.k; i++) s += ds[i].y;
+      return s / p.k;
+    };
+  }
+
+  function trainTree(X, y, p) {
+    const gini = idx => { const m = {}; idx.forEach(i => m[y[i]] = (m[y[i]] || 0) + 1); let s = 0; for (const k in m) { const q = m[k] / idx.length; s += q * q; } return 1 - s; };
+    const mode = arr => { const m = {}; arr.forEach(v => m[v] = (m[v] || 0) + 1); let best = arr[0], bc = 0; for (const k in m) if (m[k] > bc) { bc = m[k]; best = Number(k); } return best; };
     function build(idx, d) {
       if (d === 0 || new Set(idx.map(i => y[i])).size === 1) return { leaf: mode(idx.map(i => y[i])) };
       let best = null;
@@ -819,7 +826,7 @@
         for (let j = 0; j < vals.length - 1; j++) {
           const thr = (vals[j] + vals[j + 1]) / 2;
           const L = idx.filter(i => X[i][f] <= thr), R = idx.filter(i => X[i][f] > thr);
-          if (L.length < minLeaf || R.length < minLeaf) continue;
+          if (L.length < p.minSplit || R.length < p.minSplit) continue;
           const g = gini(L) * L.length / idx.length + gini(R) * R.length / idx.length;
           if (!best || g < best.g) best = { f, thr, g, L, R };
         }
@@ -827,64 +834,51 @@
       if (!best) return { leaf: mode(idx.map(i => y[i])) };
       return { f: best.f, thr: best.thr, left: build(best.L, d - 1), right: build(best.R, d - 1) };
     }
-    const root = build(X.map((_, i) => i), depth);
+    const root = build(X.map((_, i) => i), p.maxDepth);
     return x => { let n = root; while (n.left) n = x[n.f] <= n.thr ? n.left : n.right; return n.leaf; };
   }
 
-  function trainForest(X, y) {
+  function trainForest(X, y, p) {
     const trees = [];
-    for (let t = 0; t < 30; t++) {
+    for (let t = 0; t < p.nTrees; t++) {
       const idx = Array.from({ length: X.length }, () => Math.floor(Math.random() * X.length));
-      trees.push(trainTree(idx.map(i => X[i]), idx.map(i => y[i]), 5, 2));
+      trees.push(trainTree(idx.map(i => X[i]), idx.map(i => y[i]), { maxDepth: p.maxDepth, minSplit: 2 }));
     }
     return x => trees.reduce((s, tr) => s + tr(x), 0) / trees.length;
   }
 
-  function trainKNN(X, y, k) {
-    return x => {
-      const ds = X.map((p, i) => ({ d: (p[0] - x[0]) ** 2 + (p[1] - x[1]) ** 2, y: y[i] })).sort((a, b) => a.d - b.d);
-      let s = 0; for (let i = 0; i < k; i++) s += ds[i].y;
-      return s / k;
-    };
-  }
-
-  function trainNB(X, y) {
+  function trainNB(X, y, p) {
     const n = X.length, stats = {};
     [0, 1].forEach(c => {
-      const pts = X.filter((_, i) => y[i] === c);
-      stats[c] = {
-        mu: [0, 1].map(f => pts.reduce((s, p) => s + p[f], 0) / pts.length),
-        var: [0, 1].map(f => pts.reduce((s, p) => s + (p[f] - (pts.reduce((a, q) => a + q[f], 0) / pts.length)) ** 2, 0) / pts.length + 1e-6)
-      };
+      const pts = X.filter((_, i) => y[i] === c), m0 = pts.reduce((s, q) => s + q[0], 0) / pts.length, m1 = pts.reduce((s, q) => s + q[1], 0) / pts.length;
+      stats[c] = { mu: [m0, m1], var: [pts.reduce((s, q) => s + (q[0] - m0) ** 2, 0) / pts.length + p.smoothing, pts.reduce((s, q) => s + (q[1] - m1) ** 2, 0) / pts.length + p.smoothing] };
     });
     return x => {
-      const logs = [0, 1].map(c => [0, 1].reduce((s, f) => s + (-0.5 * Math.log(2 * Math.PI * stats[c].var[f]) - (x[f] - stats[c].mu[f]) ** 2 / (2 * stats[c].var[f])), 0));
+      const logs = [0, 1].map(c => [0, 1].reduce((s, f) => s - .5 * Math.log(2 * Math.PI * stats[c].var[f]) - (x[f] - stats[c].mu[f]) ** 2 / (2 * stats[c].var[f]), 0));
       return Math.exp(logs[1]) / (Math.exp(logs[0]) + Math.exp(logs[1]));
     };
   }
 
-  function trainMLP(X, y) {
-    const { Xs, mu, sd } = standardize(X);
-    const n = X.length, H = 16;
+  function trainMLP(X, y, p) {
+    const { Xs, mu, sd } = standardize(X), n = X.length, H = p.hidden;
     const r = rng(9);
-    const W1 = Array.from({ length: H }, () => [(r() - .5) * .6, (r() - .5) * .6]);
-    const b1 = Array.from({ length: H }, () => 0);
-    let W2 = Array.from({ length: H }, () => (r() - .5) * .6);
-    let b2 = 0;
-    for (let it = 0; it < 1200; it++) {
-      let gW1 = W1.map(() => [0, 0]), gb1 = new Array(H).fill(0), gW2 = new Array(H).fill(0), gb2 = 0;
+    const W1 = Array.from({ length: H }, () => [(r() - .5) * .7, (r() - .5) * .7]);
+    const b1 = new Array(H).fill(0);
+    let W2 = Array.from({ length: H }, () => (r() - .5) * .7), b2 = 0;
+    for (let it = 0; it < p.iters; it++) {
+      const gW1 = W1.map(() => [0, 0]), gb1 = new Array(H).fill(0), gW2 = new Array(H).fill(0);
+      let gb2 = 0;
       for (let i = 0; i < n; i++) {
         const x = Xs[i];
         const z1 = W1.map((w, h) => w[0] * x[0] + w[1] * x[1] + b1[h]);
         const a1 = z1.map(v => Math.max(0, v));
         const z2 = a1.reduce((s, v, h) => s + W2[h] * v, 0) + b2;
-        const p = 1 / (1 + Math.exp(-z2));
-        const dz2 = p - y[i];
-        for (let h = 0; h < H; h++) { gW2[h] += dz2 * a1[h]; gW1[h][0] += dz2 * W2[h] * (z1[h] > 0 ? x[0] : 0); gW1[h][1] += dz2 * W2[h] * (z1[h] > 0 ? x[1] : 0); gb1[h] += dz2 * W2[h] * (z1[h] > 0 ? 1 : 0); }
-        gb2 += dz2;
+        const e = 1 / (1 + Math.exp(-z2)) - y[i];
+        for (let h = 0; h < H; h++) { gW2[h] += e * a1[h]; const gz = e * W2[h] * (z1[h] > 0 ? 1 : 0); gW1[h][0] += gz * x[0]; gW1[h][1] += gz * x[1]; gb1[h] += gz; }
+        gb2 += e;
       }
-      for (let h = 0; h < H; h++) { W2[h] -= 0.3 * gW2[h] / n; b1[h] -= 0.3 * gb1[h] / n; W1[h][0] -= 0.3 * gW1[h][0] / n; W1[h][1] -= 0.3 * gW1[h][1] / n; }
-      b2 -= 0.3 * gb2 / n;
+      for (let h = 0; h < H; h++) { W2[h] -= p.lr * gW2[h] / n; b1[h] -= p.lr * gb1[h] / n; W1[h][0] -= p.lr * gW1[h][0] / n; W1[h][1] -= p.lr * gW1[h][1] / n; }
+      b2 -= p.lr * gb2 / n;
     }
     return x => {
       const a = (x[0] - mu[0]) / sd[0], c = (x[1] - mu[1]) / sd[1];
@@ -895,549 +889,759 @@
     };
   }
 
-  const BOUNDARY_MODELS = { logistic: trainLogistic, svm: trainSVM, knn: (X, y) => trainKNN(X, y, 7), tree: (X, y) => trainTree(X, y, 4, 3), forest: trainForest, bayes: trainNB, mlp: trainMLP };
-  const BOUNDARY_NOTES = { logistic: "逻辑回归学出的线性决策边界：青、粉两色区域表示预测概率，圆点为样本。", svm: "线性核 SVM 学出的最大间隔边界（示意）。", knn: "K=7 时的最近邻决策区域，边界呈不规则形状。", tree: "深度 4 的决策树边界由轴对齐的矩形组成。", forest: "30 棵随机树投票后的边界，比单棵树更平滑。", bayes: "高斯朴素贝叶斯学出的椭圆概率区域。", mlp: "两层 MLP 拟合出的非线性决策边界。" };
+  const TRAINERS = {
+    logistic: (X, y, p) => trainLogistic(X, y, p),
+    svm: (X, y, p) => trainSVM(X, y, p),
+    knn: (X, y, p) => trainKNN(X, y, p),
+    tree: (X, y, p) => trainTree(X, y, p),
+    forest: (X, y, p) => trainForest(X, y, p),
+    bayes: (X, y, p) => trainNB(X, y, p),
+    mlp: (X, y, p) => trainMLP(X, y, p)
+  };
 
-  function drawBoundaryDemo(canvas, algo) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const data = makeBlobs(180, 5);
-    const model = BOUNDARY_MODELS[algo](data.X, data.y);
-    const X0 = -3.8, X1 = 3.8, Y0 = -3.6, Y1 = 3.6;
-    const GX = 70, GY = 40;
+  const BOUNDARY_CONTROLS = {
+    logistic: [{ key: "iters", label: "迭代次数", min: 100, max: 1000, step: 50, value: 500 }, { key: "lr", label: "学习率", min: .1, max: 1, step: .05, value: .6 }],
+    svm: [{ key: "logC", label: "log₁₀ C", min: -2, max: 2, step: .1, value: 0 }],
+    knn: [{ key: "k", label: "K", min: 1, max: 25, step: 1, value: 7 }, { key: "metric", label: "距离", type: "select", value: "euclidean", options: ["euclidean", "manhattan"] }],
+    tree: [{ key: "maxDepth", label: "最大深度", min: 1, max: 8, step: 1, value: 4 }, { key: "minSplit", label: "最小分裂样本", min: 2, max: 20, step: 1, value: 3 }],
+    forest: [{ key: "nTrees", label: "树数量", min: 5, max: 100, step: 5, value: 30 }, { key: "maxDepth", label: "最大深度", min: 2, max: 8, step: 1, value: 5 }],
+    bayes: [{ key: "smoothing", label: "方差平滑", type: "select", value: 1e-6, options: [1e-9, 1e-7, 1e-6, 1e-4, 1e-2] }],
+    mlp: [{ key: "hidden", label: "隐藏单元", type: "select", value: 16, options: [4, 8, 16, 32] }, { key: "lr", label: "学习率", min: .1, max: 1, step: .05, value: .3 }, { key: "iters", label: "迭代次数", min: 200, max: 2000, step: 100, value: 1200 }]
+  };
+  const BOUNDARY_NOTES = {
+    logistic: "逻辑回归：背景色表示 P(y=1)，蓝到红代表概率从 0 到 1；拖动参数观察决策边界与准确率变化。",
+    svm: "线性 SVM：白线为最大间隔决策边界，描边点为支持向量；log₁₀ C 越大越拟合数据。",
+    knn: "K 近邻：决策区域随 K 与距离度量变化；K 越小边界越曲折、越易过拟合。",
+    tree: "决策树：边界由轴对齐的矩形构成，深度越大越复杂、越容易过拟合。",
+    forest: "随机森林：多棵树投票后的边界更平滑稳定，树越多越平滑。",
+    bayes: "高斯朴素贝叶斯：假设特征条件独立，得到椭圆概率区域；方差平滑影响数值稳定。",
+    mlp: "两层 MLP：隐藏单元越多、迭代越久，拟合出的非线性边界越精细。"
+  };
+
+  function renderBoundary(canvas, algo, p) {
+    const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+    const pad = { l: 46, r: 64, t: 30, b: 36 };
+    const data = makeBlobs(220, 5);
+    const trained = TRAINERS[algo](data.X, data.y, p);
+    const model = algo === "svm" ? (x, y) => trained.predict(x, y) : trained;
+    const xr = [-3.8, 3.8], yr = [-3.8, 3.8];
+    const pl = plot(ctx, W, H, pad, xr, yr, { x: "特征 1", y: "特征 2" });
+    const GX = 130, GY = 82;
     for (let i = 0; i < GX; i++) for (let j = 0; j < GY; j++) {
-      const x = X0 + (X1 - X0) * i / GX, y = Y0 + (Y1 - Y0) * j / GY;
-      const p = model([x, y]);
-      ctx.fillStyle = css(mix(C0, C1, p));
-      ctx.fillRect(i * w / GX, j * h / GY, w / GX + 1, h / GY + 1);
+      const x = xr[0] + (xr[1] - xr[0]) * i / GX, y = yr[0] + (yr[1] - yr[0]) * j / GY;
+      ctx.fillStyle = css(diverging(model(x, y)));
+      ctx.fillRect(pl.x0 + i * pl.pw / GX, pl.y0 + j * pl.ph / GY, pl.pw / GX + 1, pl.ph / GY + 1);
     }
-    data.X.forEach((p, i) => {
-      const px = (p[0] - X0) / (X1 - X0) * w, py = (p[1] - Y0) / (Y1 - Y0) * h;
+    const bound = [];
+    for (let j = 0; j <= 160; j++) {
+      const y = yr[0] + (yr[1] - yr[0]) * j / 160;
+      for (let i = 0; i < 240; i++) {
+        const x0 = xr[0] + (xr[1] - xr[0]) * i / 240, x1 = xr[0] + (xr[1] - xr[0]) * (i + 1) / 240;
+        const p0 = model(x0, y), p1 = model(x1, y);
+        if ((p0 - .5) * (p1 - .5) < 0) bound.push([x0 + (x1 - x0) * (.5 - p0) / (p1 - p0), y]);
+      }
+    }
+    ctx.fillStyle = "#0f172a";
+    bound.forEach(b => { const sx = pl.X(b[0]), sy = pl.Y(b[1]); ctx.fillRect(sx - .7, sy - .7, 1.4, 1.4); });
+    data.X.forEach((q, i) => {
       ctx.fillStyle = data.y[i] === 0 ? "#0b3d35" : "#56122d";
-      ctx.beginPath(); ctx.arc(px, py, 3, 0, Math.PI * 2); ctx.fill();
+      ctx.strokeStyle = data.y[i] === 0 ? "#a7f3d0" : "#fbcfe8";
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 3.2, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
     });
-    return { note: BOUNDARY_NOTES[algo] };
+    if (algo === "svm" && trained.supports) {
+      ctx.strokeStyle = "#0f172a"; ctx.lineWidth = 1.6;
+      trained.supports.forEach(i => { ctx.beginPath(); ctx.arc(pl.X(data.X[i][0]), pl.Y(data.X[i][1]), 5.5, 0, Math.PI * 2); ctx.stroke(); });
+    }
+    let correct = 0;
+    data.X.forEach((q, i) => { if ((model(q[0], q[1]) >= .5 ? 1 : 0) === data.y[i]) correct++; });
+    ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+    ctx.fillText("训练准确率 " + (correct / data.X.length * 100).toFixed(1) + "%", pad.l + 8, pad.t - 10);
+    colorbar(ctx, W - 52, pad.t, 12, H - pad.t - pad.b);
+    legend(ctx, pad.l, H - 8, [{ c: "#0b3d35", label: "类别 0" }, { c: "#56122d", label: "类别 1" }]);
+    return () => {};
   }
 
-  function drawRegression(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
+  function demoBoundary(canvas, el, algo) {
+    let stopFn = null;
+    const params = buildControls(el, BOUNDARY_CONTROLS[algo], p => { if (stopFn) stopFn(); stopFn = renderBoundary(canvas, algo, p); });
+    stopFn = renderBoundary(canvas, algo, params);
+    return { note: BOUNDARY_NOTES[algo], stop() { if (stopFn) stopFn(); }, restart() { stopFn = renderBoundary(canvas, algo, params); } };
+  }
+
+  function renderRegression(canvas, p) {
+    const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+    const pad = { l: 50, r: 18, t: 30, b: 40 };
     const r = rng(4), pts = [];
-    const A = 2.1, B = 0.8;
-    for (let i = 0; i < 70; i++) { const x = r() * 6 - 3; const y = A * x + B + (r() + r() + r() - 1.5) * 1.1; pts.push([x, y]); }
-    const mx = pts.reduce((s, p) => s + p[0], 0) / pts.length, my = pts.reduce((s, p) => s + p[1], 0) / pts.length;
-    let num = 0, den = 0;
-    pts.forEach(p => { num += (p[0] - mx) * (p[1] - my); den += (p[0] - mx) ** 2; });
-    const slope = num / den, intercept = my - slope * mx;
-    const x0 = -3, x1 = 3;
-    const yMin = Math.min(...pts.map(p => p[1])) - 1, yMax = Math.max(...pts.map(p => p[1])) + 1;
-    const px = x => (x - x0) / (x1 - x0) * w, py = y => (yMax - y) / (yMax - yMin) * h;
-    ctx.fillStyle = "#0d1512";
-    ctx.strokeStyle = "rgba(255,255,255,.12)";
-    for (let gx = -3; gx <= 3; gx++) { ctx.beginPath(); ctx.moveTo(px(gx), 0); ctx.lineTo(px(gx), h); ctx.stroke(); }
-    pts.forEach(p => { ctx.fillStyle = "#2dd4bf"; ctx.beginPath(); ctx.arc(px(p[0]), py(p[1]), 3.5, 0, Math.PI * 2); ctx.fill(); });
-    ctx.strokeStyle = "#f472b6"; ctx.lineWidth = 2.5;
-    ctx.beginPath(); ctx.moveTo(px(x0), py(slope * x0 + intercept)); ctx.lineTo(px(x1), py(slope * x1 + intercept)); ctx.stroke();
-    ctx.fillStyle = "#f472b6"; ctx.font = "13px Consolas, monospace";
-    ctx.fillText("y = " + slope.toFixed(2) + "x + " + intercept.toFixed(2), 16, 24);
-    return { note: "最小二乘拟合：青色为数据点，粉色直线为拟合结果，背景虚线是坐标网格。" };
+    for (let i = 0; i < p.n; i++) { const x = r() * 6 - 3; const y = .25 * x ** 3 - .5 * x ** 2 + .6 * x + 1 + (r() + r() + r() - 1.5) * p.noise; pts.push([x, y]); }
+    const xs = pts.map(q => q[0]), ys = pts.map(q => q[1]);
+    const xr = [Math.min(...xs) - .3, Math.max(...xs) + .3];
+    const yAll = [...ys], minY = Math.min(...yAll) - 1, maxY = Math.max(...yAll) + 1;
+    const yr = [minY, maxY];
+    const pl = plot(ctx, W, H, pad, xr, yr, { x: "x", y: "y" });
+    const A = Array.from({ length: p.degree + 1 }, (_, d) => xs.reduce((s, x) => s + x ** d, 0) / pts.length);
+    const B = Array.from({ length: p.degree + 1 }, (_, d) => xs.reduce((s, x, i) => s + x ** d * ys[i], 0) / pts.length);
+    const M = [];
+    for (let i = 0; i <= p.degree; i++) { M.push([]); for (let j = 0; j <= p.degree; j++) M[i][j] = A[i + j] || 0; }
+    const coef = solve(M, B);
+    pts.forEach(q => { ctx.fillStyle = "#3b82f6"; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 3, 0, Math.PI * 2); ctx.fill(); });
+    ctx.strokeStyle = "#ef4444"; ctx.lineWidth = 2.2;
+    ctx.beginPath();
+    for (let i = 0; i <= 220; i++) {
+      const x = xr[0] + (xr[1] - xr[0]) * i / 220;
+      let y = 0; for (let d = 0; d <= p.degree; d++) y += coef[d] * x ** d;
+      i === 0 ? ctx.moveTo(pl.X(x), pl.Y(y)) : ctx.lineTo(pl.X(x), pl.Y(y));
+    }
+    ctx.stroke();
+    let sse = 0, sst = 0; const meanY = ys.reduce((s, v) => s + v, 0) / pts.length;
+    pts.forEach(q => { let pred = 0; for (let d = 0; d <= p.degree; d++) pred += coef[d] * q[0] ** d; sse += (pred - q[1]) ** 2; sst += (q[1] - meanY) ** 2; });
+    const r2 = 1 - sse / sst, mse = sse / pts.length;
+    ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+    ctx.fillText("R² = " + r2.toFixed(3) + "   MSE = " + mse.toFixed(3), pad.l + 8, pad.t - 10);
+    return () => {};
+  }
+  function solve(A, b) {
+    const n = A.length, M = A.map((row, i) => [...row, b[i]]);
+    for (let c = 0; c < n; c++) {
+      let pv = c; for (let r = c + 1; r < n; r++) if (Math.abs(M[r][c]) > Math.abs(M[pv][c])) pv = r;
+      [M[c], M[pv]] = [M[pv], M[c]];
+      for (let r = c + 1; r < n; r++) { const f = M[r][c] / M[c][c]; for (let k = c; k <= n; k++) M[r][k] -= f * M[c][k]; }
+    }
+    const x = new Array(n).fill(0);
+    for (let r = n - 1; r >= 0; r--) { let s = M[r][n]; for (let c = r + 1; c < n; c++) s -= M[r][c] * x[c]; x[r] = s / M[r][r]; }
+    return x;
+  }
+  function demoRegression(canvas, el) {
+    let stopFn = null;
+    const params = buildControls(el, [
+      { key: "degree", label: "多项式阶数", min: 1, max: 5, step: 1, value: 3 },
+      { key: "noise", label: "噪声强度", min: 0, max: 1.5, step: .05, value: .6 },
+      { key: "n", label: "样本数", min: 20, max: 120, step: 5, value: 70 }
+    ], p => { if (stopFn) stopFn(); stopFn = renderRegression(canvas, p); });
+    stopFn = renderRegression(canvas, params);
+    return { note: "多项式回归：蓝点为数据，红线为最小二乘拟合曲线；提高阶数会过拟合、R² 虚高，增大噪声会降低拟合质量。", stop() { if (stopFn) stopFn(); }, restart() { stopFn = renderRegression(canvas, params); } };
   }
 
-  function drawKMeans(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const r = rng(11), pts = [], centers = [[-2, 2], [2, 2], [0, -1.4]];
-    const g = () => { let u = 0, v = 0; while (u === 0) u = r(); while (v === 0) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
-    for (let i = 0; i < 160; i++) { const c = centers[i % 3]; pts.push([c[0] + g() * .55, c[1] + g() * .55]); }
-    const K = 3, palette = ["#2dd4bf", "#f472b6", "#fbbf24"];
-    let cents = [[-1, 1], [1, 1], [0, -1]], assign = new Array(pts.length).fill(0), iter = 0, timer = null, stopped = false;
-    const X0 = -3.5, X1 = 3.5, Y0 = -3.2, Y1 = 3.2;
-    function step() {
-      if (stopped) return;
-      pts.forEach((p, i) => { let bi = 0, bd = 1e9; cents.forEach((c, k) => { const d = (p[0] - c[0]) ** 2 + (p[1] - c[1]) ** 2; if (d < bd) { bd = d; bi = k; } }); assign[i] = bi; });
-      const sums = Array.from({ length: K }, () => [0, 0, 0]);
-      pts.forEach((p, i) => { sums[assign[i]][0] += p[0]; sums[assign[i]][1] += p[1]; sums[assign[i]][2]++; });
-      let moved = 0;
-      cents = cents.map((c, k) => { if (sums[k][2] === 0) return c; const nc = [sums[k][0] / sums[k][2], sums[k][1] / sums[k][2]]; moved += (nc[0] - c[0]) ** 2 + (nc[1] - c[1]) ** 2; return nc; });
+  function demoKMeans(canvas, el) {
+    const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+    const r = rng(11), pts = [], centers = [[-2, 1.6], [2, 1.6], [0, -1.4], [-2.2, -1.2], [2.2, -1.2]];
+    for (let i = 0; i < 200; i++) { const c = centers[i % centers.length]; pts.push([c[0] + gauss(r) * .5, c[1] + gauss(r) * .5]); }
+    const palette = ["#2563eb", "#dc2626", "#16a34a", "#ca8a04", "#9333ea", "#0891b2"];
+    let timer = null, stopped = false;
+    const controls = [
+      { key: "k", label: "K", min: 2, max: 6, step: 1, value: 3 },
+      { key: "init", label: "初始化", type: "select", value: "kmeans++", options: ["kmeans++", "random"] }
+    ];
+    const elbow = {};
+    for (let k = 1; k <= 7; k++) { const c = kmeans(pts, k, "kmeans++", 60); elbow[k] = c.inertia; }
+    function kmeans(pts, k, init, iters) {
+      let cents = init === "random" ? pts.slice(0, k).map(q => [...q]) : kpp(pts, k);
+      let assign = new Array(pts.length).fill(0), inertia = 0;
+      for (let it = 0; it < iters; it++) {
+        inertia = 0;
+        pts.forEach((q, i) => { let bi = 0, bd = 1e9; cents.forEach((c, j) => { const d = (q[0] - c[0]) ** 2 + (q[1] - c[1]) ** 2; if (d < bd) { bd = d; bi = j; } }); assign[i] = bi; inertia += Math.sqrt((q[0] - cents[bi][0]) ** 2 + (q[1] - cents[bi][1]) ** 2) ** 2; });
+        const sums = Array.from({ length: k }, () => [0, 0, 0]);
+        pts.forEach((q, i) => { sums[assign[i]][0] += q[0]; sums[assign[i]][1] += q[1]; sums[assign[i]][2]++; });
+        cents = cents.map((c, j) => sums[j][2] ? [sums[j][0] / sums[j][2], sums[j][1] / sums[j][2]] : c);
+      }
+      return { cents, assign, inertia };
+    }
+    function kpp(pts, k) {
+      const r2 = rng(21), out = [pts[Math.floor(r2() * pts.length)].slice()];
+      while (out.length < k) {
+        const ds = pts.map(q => Math.min(...out.map(c => (q[0] - c[0]) ** 2 + (q[1] - c[1]) ** 2)));
+        let sum = ds.reduce((s, v) => s + v, 0), pick = r2() * sum;
+        let idx = 0; for (; idx < pts.length; idx++) { pick -= ds[idx]; if (pick <= 0) break; }
+        out.push(pts[Math.min(idx, pts.length - 1)].slice());
+      }
+      return out;
+    }
+    function run(p) {
+      stopped = true; clearTimeout(timer); stopped = false;
+      let cents = p.init === "random" ? pts.slice(0, p.k).map(q => [...q]) : kpp(pts, p.k);
+      let assign = new Array(pts.length).fill(0), iter = 0;
+      function draw() {
+        if (stopped) return;
+        ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+        const xr = [-3.4, 3.4], yr = [-3.2, 3.2];
+        const pad = { l: 42, r: 8, t: 28, b: 34 };
+        const leftW = W * .62;
+        const pl = plot(ctx, W, H, { l: pad.l, r: W - leftW + 8, t: pad.t, b: pad.b }, xr, yr, { x: "特征 1", y: "特征 2" });
+        pts.forEach((q, i) => { let bi = 0, bd = 1e9; cents.forEach((c, j) => { const d = (q[0] - c[0]) ** 2 + (q[1] - c[1]) ** 2; if (d < bd) { bd = d; bi = j; } }); assign[i] = bi; });
+        const sums = Array.from({ length: p.k }, () => [0, 0, 0]);
+        pts.forEach((q, i) => { sums[assign[i]][0] += q[0]; sums[assign[i]][1] += q[1]; sums[assign[i]][2]++; });
+        let moved = 0;
+        cents = cents.map((c, j) => { if (!sums[j][2]) return c; const nc = [sums[j][0] / sums[j][2], sums[j][1] / sums[j][2]]; moved += (nc[0] - c[0]) ** 2 + (nc[1] - c[1]) ** 2; return nc; });
+        let inertia = 0;
+        pts.forEach((q, i) => inertia += (q[0] - cents[assign[i]][0]) ** 2 + (q[1] - cents[assign[i]][1]) ** 2);
+        pts.forEach((q, i) => { ctx.fillStyle = palette[assign[i] % palette.length]; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 2.8, 0, Math.PI * 2); ctx.fill(); });
+        cents.forEach((c, j) => { ctx.fillStyle = "#0f172a"; ctx.beginPath(); ctx.moveTo(pl.X(c[0]), pl.Y(c[1]) - 7); ctx.lineTo(pl.X(c[0]) + 6, pl.Y(c[1])); ctx.lineTo(pl.X(c[0]), pl.Y(c[1]) + 7); ctx.lineTo(pl.X(c[0]) - 6, pl.Y(c[1])); ctx.closePath(); ctx.fill(); });
+        ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+        ctx.fillText("迭代 " + iter + "   惯量 " + inertia.toFixed(1), pad.l, pad.t - 10);
+        const e = elbow, ks = Object.keys(e).map(Number);
+        const ePad = { l: leftW + 20, r: 16, t: pad.t, b: pad.b };
+        const epl = plot(ctx, W, H, ePad, [0.5, 7.5], [0, Math.max(...ks.map(k => e[k])) * 1.15], { x: "K", y: "惯量" });
+        ctx.strokeStyle = "#2563eb"; ctx.lineWidth = 2;
+        ctx.beginPath();
+        ks.forEach((k, i) => { i === 0 ? ctx.moveTo(epl.X(k), epl.Y(e[k])) : ctx.lineTo(epl.X(k), epl.Y(e[k])); });
+        ctx.stroke();
+        ks.forEach(k => { ctx.fillStyle = k === p.k ? "#dc2626" : "#2563eb"; ctx.beginPath(); ctx.arc(epl.X(k), epl.Y(e[k]), 3.5, 0, Math.PI * 2); ctx.fill(); });
+        iter++;
+        if (moved > .0001 && iter < 40) timer = setTimeout(draw, 420);
+      }
       draw();
-      iter++;
-      if (moved < 0.0001 && iter > 2) return;
-      timer = setTimeout(step, 520);
     }
-    function draw() {
-      ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-      pts.forEach((p, i) => {
-        const x = (p[0] - X0) / (X1 - X0) * w, y = (p[1] - Y0) / (Y1 - Y0) * h;
-        ctx.fillStyle = palette[assign[i]]; ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill();
-      });
-      cents.forEach((c, k) => {
-        const x = (c[0] - X0) / (X1 - X0) * w, y = (c[1] - Y0) / (Y1 - Y0) * h;
-        ctx.fillStyle = "#fff"; ctx.beginPath(); ctx.moveTo(x, y - 7); ctx.lineTo(x + 6, y); ctx.lineTo(x, y + 7); ctx.lineTo(x - 6, y); ctx.closePath(); ctx.fill();
-      });
-      ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-      ctx.fillText("迭代 " + iter + " · K-Means 交替分配与更新中心", 16, 24);
-    }
-    step();
-    return {
-      note: "K-Means 迭代过程：三种颜色表示当前簇，白色菱形是簇中心，每一轮交替“分配点”和“更新中心”。",
-      stop() { stopped = true; clearTimeout(timer); },
-      restart() { stopped = true; clearTimeout(timer); stopped = false; cents = [[-1, 1], [1, 1], [0, -1]]; assign = new Array(pts.length).fill(0); iter = 0; step(); }
-    };
+    const params = buildControls(el, controls, run);
+    run(params);
+    return { note: "K-Means：左图为 Lloyd 迭代过程，右图为肘部曲线（惯量随 K 下降）；K 增大惯量下降但簇会过度细分。", stop() { stopped = true; clearTimeout(timer); }, restart() { run(params); } };
   }
 
-  function drawDBSCAN(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
+  function demoDBSCAN(canvas, el) {
     const r = rng(12), pts = [];
-    const g = () => { let u = 0, v = 0; while (u === 0) u = r(); while (v === 0) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
     const centers = [[-1.8, 1.5], [1.8, 1.5], [0, -1.5]];
-    for (let i = 0; i < 150; i++) { const c = centers[i % 3]; pts.push([c[0] + g() * .35, c[1] + g() * .35]); }
-    for (let i = 0; i < 12; i++) pts.push([(r() * 7 - 3.5), (r() * 6 - 3)]);
-    const eps = 0.62, minPts = 5;
-    const labels = new Array(pts.length).fill(-1);
-    let cluster = 0;
-    pts.forEach((p, i) => {
-      if (labels[i] !== -1) return;
-      const neigh = pts.map((q, j) => ({ j, d: (p[0] - q[0]) ** 2 + (p[1] - q[1]) ** 2 })).filter(o => o.d <= eps * eps).map(o => o.j);
-      if (neigh.length < minPts) { labels[i] = -1; return; }
-      labels[i] = cluster;
-      const q = [...neigh];
-      for (let c = 0; c < q.length; c++) {
-        const j = q[c];
-        if (labels[j] === -1) labels[j] = cluster;
-        if (labels[j] !== cluster) continue;
-        const neigh2 = pts.map((qq, k) => ({ k, d: (pts[j][0] - qq[0]) ** 2 + (pts[j][1] - qq[1]) ** 2 })).filter(o => o.d <= eps * eps).map(o => o.k);
-        if (neigh2.length >= minPts) neigh2.forEach(k => { if (!q.includes(k)) q.push(k); });
-      }
-      cluster++;
-    });
-    const palette = ["#2dd4bf", "#f472b6", "#fbbf24"];
-    const X0 = -3.5, X1 = 3.5, Y0 = -3.2, Y1 = 3.2;
-    pts.forEach((p, i) => {
-      const x = (p[0] - X0) / (X1 - X0) * w, y = (p[1] - Y0) / (Y1 - Y0) * h;
-      ctx.fillStyle = labels[i] === -1 ? "#64748b" : palette[labels[i] % 3];
-      ctx.beginPath(); ctx.arc(x, y, labels[i] === -1 ? 2.5 : 3.5, 0, Math.PI * 2); ctx.fill();
-    });
-    ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-    ctx.fillText("DBSCAN：灰色为噪声点，其余为密度连通簇", 16, 24);
-    return { note: "DBSCAN 按密度连通性分簇：能发现任意形状的簇，并把孤立点标为噪声（灰色）。" };
-  }
-
-  function drawDendrogram(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const r = rng(13), pts = [];
-    for (let i = 0; i < 10; i++) pts.push(r() < .5 ? r() * 2 + 0.3 : r() * 2 + 4.2);
-    pts.sort((a, b) => a - b);
-    const clusters = pts.map((v, i) => ({ pos: i, size: 1, members: [i] }));
-    const merges = [];
-    const heights = [];
-    while (clusters.length > 1) {
-      let bi = 0, bd = 1e9;
-      for (let i = 0; i < clusters.length - 1; i++) {
-        const left = pts[clusters[i].members[clusters[i].members.length - 1]];
-        const right = pts[clusters[i + 1].members[0]];
-        const d = Math.abs(left - right);
-        if (d < bd) { bd = d; bi = i; }
-      }
-      const a = clusters[bi], b = clusters[bi + 1];
-      const newPos = (a.pos * a.size + b.pos * b.size) / (a.size + b.size);
-      merges.push({ x0: a.pos, x1: b.pos, h: bd });
-      heights.push(bd);
-      clusters.splice(bi, 2, { pos: newPos, size: a.size + b.size, members: a.members.concat(b.members) });
+    for (let i = 0; i < 180; i++) { const c = centers[i % 3]; pts.push([c[0] + gauss(r) * .34, c[1] + gauss(r) * .34]); }
+    for (let i = 0; i < 16; i++) pts.push([r() * 7 - 3.5, r() * 6 - 3]);
+    const palette = ["#2563eb", "#dc2626", "#16a34a", "#ca8a04", "#9333ea"];
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const pad = { l: 42, r: 18, t: 30, b: 36 }, xr = [-3.5, 3.5], yr = [-3.2, 3.2];
+      const pl = plot(ctx, W, H, pad, xr, yr, { x: "特征 1", y: "特征 2" });
+      const labels = new Array(pts.length).fill(-1); let cluster = 0;
+      pts.forEach((q, i) => {
+        if (labels[i] !== -1) return;
+        const neigh = pts.map((p2, j) => ({ j, d: (q[0] - p2[0]) ** 2 + (q[1] - p2[1]) ** 2 })).filter(o => o.d <= p.eps * p.eps).map(o => o.j);
+        if (neigh.length < p.minPts) { labels[i] = -1; return; }
+        labels[i] = cluster;
+        const stack = [...neigh];
+        for (let c = 0; c < stack.length; c++) {
+          const j = stack[c];
+          if (labels[j] === -1) labels[j] = cluster;
+          if (labels[j] !== cluster) continue;
+          const n2 = pts.map((p2, k) => ({ k, d: (pts[j][0] - p2[0]) ** 2 + (pts[j][1] - p2[1]) ** 2 })).filter(o => o.d <= p.eps * p.eps).map(o => o.k);
+          if (n2.length >= p.minPts) n2.forEach(k => { if (!stack.includes(k)) stack.push(k); });
+        }
+        cluster++;
+      });
+      pts.forEach((q, i) => { ctx.fillStyle = labels[i] === -1 ? "#94a3b8" : palette[labels[i] % palette.length]; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), labels[i] === -1 ? 2.3 : 3.2, 0, Math.PI * 2); ctx.fill(); });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("簇数 " + cluster + "   噪声点 " + labels.filter(v => v === -1).length, pad.l, pad.t - 10);
+      legend(ctx, pad.l, H - 8, [{ c: "#94a3b8", label: "噪声" }, { c: "#2563eb", label: "簇" }]);
+      stopFn = () => {};
     }
-    const maxH = Math.max(...heights) || 1;
-    const px = i => 40 + i / (pts.length - 1) * (w - 80);
-    const py = hgt => h - 30 - (hgt / maxH) * (h - 70);
-    ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-    ctx.strokeStyle = "rgba(45,212,191,.85)"; ctx.lineWidth = 1.5;
-    merges.forEach(m => {
-      const y = py(m.h);
-      ctx.beginPath(); ctx.moveTo(px(m.x0), h - 30); ctx.lineTo(px(m.x0), y); ctx.lineTo(px(m.x1), y); ctx.lineTo(px(m.x1), h - 30); ctx.stroke();
-    });
-    ctx.fillStyle = "#f472b6";
-    pts.forEach((v, i) => { ctx.beginPath(); ctx.arc(px(i), h - 30, 4, 0, Math.PI * 2); ctx.fill(); ctx.fillStyle = "rgba(255,255,255,.7)"; ctx.font = "12px sans-serif"; ctx.fillText(v.toFixed(1), px(i) - 8, h - 42); ctx.fillStyle = "#f472b6"; });
-    return { note: "层次聚类树状图：横轴是排序后的样本，纵轴是合并距离，从下往上逐步合并最相近的两簇。" };
+    const params = buildControls(el, [
+      { key: "eps", label: "eps", min: .2, max: 1.4, step: .05, value: .55 },
+      { key: "minPts", label: "minPts", min: 2, max: 12, step: 1, value: 5 }
+    ], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "DBSCAN：eps 控制邻域半径，minPts 控制核心点阈值；灰色为噪声，同色为密度连通簇。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
   }
 
-  function drawPCA(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const r = rng(14), pts = [];
-    for (let i = 0; i < 160; i++) { const x1 = (r() + r() + r() - 1.5) * 1.8; const x2 = 0.8 * x1 + (r() - .5) * 1.2; pts.push([x1, x2]); }
-    const mx = pts.reduce((s, p) => s + p[0], 0) / pts.length, my = pts.reduce((s, p) => s + p[1], 0) / pts.length;
-    let cxx = 0, cyy = 0, cxy = 0;
-    pts.forEach(p => { cxx += (p[0] - mx) ** 2; cyy += (p[1] - my) ** 2; cxy += (p[0] - mx) * (p[1] - my); });
-    cxx /= pts.length; cyy /= pts.length; cxy /= pts.length;
-    const tr = cxx + cyy, det = Math.sqrt(((cxx - cyy) / 2) ** 2 + cxy * cxy);
-    const l1 = tr / 2 + det, l2 = tr / 2 - det;
-    const ratio = l1 / (l1 + l2);
-    function evec(lam) { const v = [cxy, lam - cxx]; const n = Math.hypot(v[0], v[1]) || 1; return [v[0] / n, v[1] / n]; }
-    const e1 = evec(l1), e2 = evec(l2);
-    const X0 = -4.2, X1 = 4.2, Y0 = -3.4, Y1 = 3.4;
-    const px = x => (x - X0) / (X1 - X0) * w, py = y => (Y1 - y) / (Y1 - Y0) * h;
-    ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-    ctx.fillStyle = "rgba(45,212,191,.55)";
-    pts.forEach(p => { ctx.beginPath(); ctx.arc(px(p[0]), py(p[1]), 2.5, 0, Math.PI * 2); ctx.fill(); });
-    const drawAxis = (v, len, color) => {
-      const cx = px(mx), cy = py(my);
-      ctx.strokeStyle = color; ctx.lineWidth = 2.5;
-      ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + v[0] * len, cy - v[1] * len); ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(cx + v[0] * len - 6 * v[1], cy - v[1] * len - 6 * v[0]); ctx.lineTo(cx + v[0] * len, cy - v[1] * len); ctx.lineTo(cx + v[0] * len + 6 * v[1], cy - v[1] * len + 6 * v[0]); ctx.stroke();
-    };
-    drawAxis(e1, 180, "#f472b6"); drawAxis(e2, 80, "#fbbf24");
-    ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.font = "13px sans-serif";
-    ctx.fillText("第一主成分解释 " + (ratio * 100).toFixed(0) + "% 方差", 16, 24);
-    return { note: "PCA 找方差最大的方向：粉色箭头是第一主成分，黄色是第二主成分，数据沿第一主成分分布最广。" };
-  }
-
-  function drawProjection(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const r = rng(15), pts = [], palette = ["#2dd4bf", "#f472b6", "#fbbf24"];
-    for (let i = 0; i < 180; i++) { const k = i % 3; const c = [[-1.6, 1], [1.6, 1], [0, -1.5]][k]; const u = r() * 2 - 1, v = r() * 2 - 1; pts.push([c[0] + u * .9, c[1] + v * .9, k]); }
-    const X0 = -3.4, X1 = 3.4, Y0 = -2.8, Y1 = 2.8;
-    pts.forEach(p => {
-      const x = (p[0] - X0) / (X1 - X0) * w, y = (p[1] - Y0) / (Y1 - Y0) * h;
-      ctx.fillStyle = palette[p[2]]; ctx.beginPath(); ctx.arc(x, y, 3, 0, Math.PI * 2); ctx.fill();
-    });
-    ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-    ctx.fillText("高维相似样本被映射到二维平面（示意）", 16, 24);
-    return { note: "示意：t-SNE / UMAP 把高维中相似的样本拉近、映射到二维，主要用于可视化，不保证全局距离。" };
-  }
-
-  function drawAnomaly(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const r = rng(16), pts = [];
-    const g = () => { let u = 0, v = 0; while (u === 0) u = r(); while (v === 0) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v); };
-    for (let i = 0; i < 120; i++) pts.push([g() * .9, g() * .9]);
-    for (let i = 0; i < 10; i++) { const ang = r() * Math.PI * 2, rad = 7 + r() * 2; pts.push([Math.cos(ang) * rad, Math.sin(ang) * rad]); }
-    const T = 40, depths = new Array(pts.length).fill(0);
-    for (let t = 0; t < T; t++) {
-      function iso(idx, depth) {
-        if (idx.length <= 1 || depth >= 8) { idx.forEach(i => depths[i] += depth); return; }
-        const f = r() < .5 ? 0 : 1;
-        const vals = idx.map(i => pts[i][f]);
-        const mn = Math.min(...vals), mx = Math.max(...vals);
-        if (mn === mx) { idx.forEach(i => depths[i] += depth); return; }
-        const thr = mn + r() * (mx - mn);
-        iso(idx.filter(i => pts[i][f] <= thr), depth + 1);
-        iso(idx.filter(i => pts[i][f] > thr), depth + 1);
+  function demoDendrogram(canvas, el) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const r = rng(13), pts = [];
+      for (let i = 0; i < p.n; i++) pts.push(r() < .55 ? r() * 2 + .3 : r() * 2 + 4.2);
+      pts.sort((a, b) => a - b);
+      const clusters = pts.map((v, i) => ({ pos: i, size: 1, members: [i] }));
+      const merges = [];
+      const dist = (a, b) => {
+        const as = a.members.map(m => pts[m]), bs = b.members.map(m => pts[m]);
+        if (p.linkage === "single") return Math.abs(as[as.length - 1] - bs[0]);
+        if (p.linkage === "complete") return Math.abs(bs[bs.length - 1] - as[0]);
+        let s = 0; as.forEach(x => bs.forEach(y => s += Math.abs(x - y))); return s / (as.length * bs.length);
+      };
+      while (clusters.length > 1) {
+        let bi = 0, bd = 1e9;
+        for (let i = 0; i < clusters.length - 1; i++) { const d = dist(clusters[i], clusters[i + 1]); if (d < bd) { bd = d; bi = i; } }
+        const a = clusters[bi], b = clusters[bi + 1];
+        merges.push({ x0: a.pos, x1: b.pos, h: bd });
+        clusters.splice(bi, 2, { pos: (a.pos * a.size + b.pos * b.size) / (a.size + b.size), size: a.size + b.size, members: a.members.concat(b.members) });
       }
-      iso(pts.map((_, i) => i), 0);
+      const pad = { l: 46, r: 20, t: 24, b: 38 };
+      const maxH = Math.max(...merges.map(m => m.h)) || 1;
+      const pl = plot(ctx, W, H, pad, [0, pts.length - 1], [0, maxH * 1.05], { x: "样本（按值排序）", y: "合并距离" });
+      ctx.strokeStyle = "#0f766e"; ctx.lineWidth = 1.6;
+      merges.forEach(m => {
+        const y = pl.Y(m.h);
+        ctx.beginPath(); ctx.moveTo(pl.X(m.x0), pl.Y(0)); ctx.lineTo(pl.X(m.x0), y); ctx.lineTo(pl.X(m.x1), y); ctx.lineTo(pl.X(m.x1), pl.Y(0)); ctx.stroke();
+      });
+      ctx.fillStyle = "#dc2626";
+      pts.forEach((v, i) => { ctx.beginPath(); ctx.arc(pl.X(i), pl.Y(0), 3, 0, Math.PI * 2); ctx.fill(); });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("linkage = " + p.linkage, pad.l, pad.t - 8);
+      stopFn = () => {};
     }
-    const avg = pts.map((_, i) => depths[i] / T);
-    const c = n => 2 * (Math.log(n - 1) + 0.5772) - 2 * (n - 1) / n;
-    const scores = avg.map(d => Math.pow(2, -d / c(pts.length)));
-    const threshold = [...scores].sort((a, b) => b - a)[Math.floor(pts.length * 0.08)];
-    const X0 = -9, X1 = 9, Y0 = -9, Y1 = 9;
-    pts.forEach((p, i) => {
-      const x = (p[0] - X0) / (X1 - X0) * w, y = (p[1] - Y0) / (Y1 - Y0) * h;
-      const bad = scores[i] > threshold;
-      ctx.fillStyle = bad ? "#f472b6" : "rgba(45,212,191,.7)";
-      ctx.beginPath(); ctx.arc(x, y, bad ? 4 : 2.5, 0, Math.PI * 2); ctx.fill();
-      if (bad) { ctx.strokeStyle = "#f472b6"; ctx.beginPath(); ctx.arc(x, y, 8, 0, Math.PI * 2); ctx.stroke(); }
-    });
-    ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-    ctx.fillText("孤立森林：粉色为异常点，青色为正常点", 16, 24);
-    return { note: "简化版孤立森林：随机分割越容易把点孤立出来，就越可能是异常（粉色带圈）。" };
+    const params = buildControls(el, [
+      { key: "linkage", label: "合并准则", type: "select", value: "single", options: ["single", "complete", "average"] },
+      { key: "n", label: "样本数", min: 8, max: 20, step: 1, value: 10 }
+    ], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "层次聚类树状图：纵轴是合并距离，越靠下合并的两簇越相似；不同 linkage 准则会得到不同树形。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
   }
 
-  function drawImportance(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const feats = [["特征 A", .31], ["特征 B", .24], ["特征 C", .17], ["特征 D", .12], ["特征 E", .09], ["特征 F", .07]];
-    ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-    const baseY = 48, rowH = 42;
-    feats.forEach((f, i) => {
-      const y = baseY + i * rowH;
-      ctx.fillStyle = "rgba(255,255,255,.75)"; ctx.font = "13px sans-serif"; ctx.fillText(f[0], 16, y + 18);
-      const bw = (w - 120) * f[1];
-      ctx.fillStyle = i % 2 === 0 ? "#2dd4bf" : "#fbbf24";
-      ctx.fillRect(110, y + 6, bw, 22);
-      ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.fillText(f[1].toFixed(2), 110 + bw + 8, y + 23);
-    });
-    return { note: "示意：树模型给出的特征重要性条形图，值越大代表该特征对预测贡献越大。" };
+  function demoPCA(canvas, el) {
+    let stopFn = null;
+    function eigen2x2(a, b, c) {
+      const tr = a + c, det = Math.sqrt(((a - c) / 2) ** 2 + b * b);
+      const l1 = tr / 2 + det, l2 = tr / 2 - det;
+      const ev = l => { const v = [b, l - a], n = Math.hypot(v[0], v[1]) || 1; return [v[0] / n, v[1] / n]; };
+      return [[l1, ev(l1)], [l2, ev(l2)]];
+    }
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const r = rng(14), pts = [];
+      for (let i = 0; i < 180; i++) { const x1 = (gauss(r) + gauss(r)) * p.noise; const x2 = .85 * x1 + gauss(r) * p.noise; pts.push([x1, x2]); }
+      const mx = pts.reduce((s, q) => s + q[0], 0) / pts.length, my = pts.reduce((s, q) => s + q[1], 0) / pts.length;
+      let cxx = 0, cyy = 0, cxy = 0;
+      pts.forEach(q => { cxx += (q[0] - mx) ** 2; cyy += (q[1] - my) ** 2; cxy += (q[0] - mx) * (q[1] - my); });
+      cxx /= pts.length; cyy /= pts.length; cxy /= pts.length;
+      const eigs = eigen2x2(cxx, cxy, cyy);
+      const l1 = eigs[0][0], l2 = eigs[1][0], e1 = eigs[0][1], e2 = eigs[1][1];
+      const xr = [-4.5, 4.5], yr = [-3.8, 3.8];
+      const pad = { l: 42, r: 8, t: 28, b: 34 };
+      const leftW = W * .58;
+      const pl = plot(ctx, W, H, { l: pad.l, r: W - leftW + 8, t: pad.t, b: pad.b }, xr, yr, { x: "PC1", y: "PC2" });
+      ctx.fillStyle = "rgba(37,99,235,.55)";
+      pts.forEach(q => { ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 2.5, 0, Math.PI * 2); ctx.fill(); });
+      const drawArrow = (v, len, color) => {
+        const cx = pl.X(mx), cy = pl.Y(my);
+        ctx.strokeStyle = color; ctx.lineWidth = 2.2;
+        ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(cx + v[0] * len, cy - v[1] * len); ctx.stroke();
+        ctx.beginPath(); ctx.moveTo(cx + v[0] * len - 6 * v[1], cy - v[1] * len - 6 * v[0]); ctx.lineTo(cx + v[0] * len, cy - v[1] * len); ctx.lineTo(cx + v[0] * len + 6 * v[1], cy - v[1] * len + 6 * v[0]); ctx.stroke();
+      };
+      drawArrow(e1, 170, "#dc2626"); drawArrow(e2, 80, "#ca8a04");
+      const ratio = l1 / (l1 + l2);
+      const ePad = { l: leftW + 18, r: 16, t: pad.t, b: pad.b };
+      const epl = plot(ctx, W, H, ePad, [.5, 2.5], [0, Math.max(l1, l2) * 1.15], { x: "主成分", y: "方差" });
+      const vals = [l1, l2];
+      vals.forEach((v, i) => {
+        ctx.fillStyle = i === 0 ? "#dc2626" : "#ca8a04";
+        const bw = epl.pw * .34;
+        ctx.fillRect(epl.X(i + .62), epl.Y(v), bw, epl.Y(0) - epl.Y(v));
+        ctx.fillStyle = "#0f172a"; ctx.font = "11px sans-serif"; ctx.textAlign = "center";
+        ctx.fillText("PC" + (i + 1), epl.X(i + 1), epl.Y(0) + 13);
+      });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("第一主成分解释 " + (ratio * 100).toFixed(0) + "% 方差", pad.l, pad.t - 10);
+      stopFn = () => {};
+    }
+    const params = buildControls(el, [{ key: "noise", label: "相关性强度", min: .3, max: 1.5, step: .05, value: .9 }], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "PCA：红箭头为第一主成分（方差最大方向），黄箭头为第二主成分；右图为碎石图，展示各主成分解释的方差。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
   }
 
-  function drawConv(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
+  function demoProjection(canvas, el) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const r = rng(15), pts = [], palette = ["#2563eb", "#dc2626", "#16a34a"];
+      for (let i = 0; i < 210; i++) { const k = i % 3, c = [[-1.6, 1], [1.6, 1], [0, -1.5]][k]; pts.push([c[0] + (r() * 2 - 1) * p.sep, c[1] + (r() * 2 - 1) * p.sep, k]); }
+      const pad = { l: 42, r: 18, t: 28, b: 36 }, xr = [-3.6, 3.6], yr = [-3, 3];
+      const pl = plot(ctx, W, H, pad, xr, yr, { x: "维度 1", y: "维度 2" });
+      pts.forEach(q => { ctx.fillStyle = palette[q[2]]; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 2.8, 0, Math.PI * 2); ctx.fill(); });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("高维样本在低维空间的结构保持（示意）", pad.l, pad.t - 10);
+      stopFn = () => {};
+    }
+    const params = buildControls(el, [{ key: "sep", label: "簇间分离度", min: .3, max: 2.2, step: .05, value: .9 }], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "示意：t-SNE / UMAP 把高维中相似的样本拉近并映射到二维；分离度越大，簇结构越清晰。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
+  }
+
+  function demoAnomaly(canvas, el) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const r = rng(16), pts = [];
+      for (let i = 0; i < 140; i++) pts.push([gauss(r), gauss(r)]);
+      for (let i = 0; i < 12; i++) { const a = r() * Math.PI * 2, rad = 6.5 + r() * 2; pts.push([Math.cos(a) * rad, Math.sin(a) * rad]); }
+      const T = p.nTrees, depths = new Array(pts.length).fill(0);
+      for (let t = 0; t < T; t++) {
+        (function iso(idx, depth) {
+          if (idx.length <= 1 || depth >= 9) { idx.forEach(i => depths[i] += depth); return; }
+          const f = r() < .5 ? 0 : 1;
+          const vals = idx.map(i => pts[i][f]), mn = Math.min(...vals), mx = Math.max(...vals);
+          if (mn === mx) { idx.forEach(i => depths[i] += depth); return; }
+          const thr = mn + r() * (mx - mn);
+          iso(idx.filter(i => pts[i][f] <= thr), depth + 1);
+          iso(idx.filter(i => pts[i][f] > thr), depth + 1);
+        })(pts.map((_, i) => i), 0);
+      }
+      const c = n => 2 * (Math.log(n - 1) + .5772) - 2 * (n - 1) / n;
+      const scores = depths.map(d => Math.pow(2, -d / T / c(pts.length)));
+      const thr = [...scores].sort((a, b) => b - a)[Math.floor(pts.length * p.contamination)];
+      const pad = { l: 42, r: 58, t: 28, b: 36 }, xr = [-9, 9], yr = [-9, 9];
+      const pl = plot(ctx, W, H, pad, xr, yr, { x: "特征 1", y: "特征 2" });
+      let nAnom = 0;
+      pts.forEach((q, i) => {
+        const bad = scores[i] > thr;
+        if (bad) nAnom++;
+        ctx.fillStyle = bad ? "#dc2626" : "rgba(37,99,235,.65)";
+        ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), bad ? 4 : 2.6, 0, Math.PI * 2); ctx.fill();
+        if (bad) { ctx.strokeStyle = "#dc2626"; ctx.lineWidth = 1.4; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 7, 0, Math.PI * 2); ctx.stroke(); }
+      });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("异常点 " + nAnom + " / " + pts.length, pad.l, pad.t - 10);
+      colorbar(ctx, W - 52, pad.t, 12, H - pad.t - pad.b);
+      stopFn = () => {};
+    }
+    const params = buildControls(el, [
+      { key: "nTrees", label: "树数量", min: 10, max: 100, step: 5, value: 40 },
+      { key: "contamination", label: "异常比例", min: .02, max: .3, step: .01, value: .08 }
+    ], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "孤立森林：随机分割越容易把点孤立出来，异常分数越高（右侧色条）；红色为判定异常点。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
+  }
+
+  function demoImportance(canvas, el) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const feats = ["年龄", "收入", "信用分", "负债率", "交易频次", "账户时长", "地域", "职业类型"].slice(0, p.n);
+      const vals = feats.map((_, i) => Math.max(.04, .35 * Math.exp(-i * .45) + (Math.sin(i * 2.1) * .04)));
+      const order = feats.map((_, i) => i).sort((a, b) => vals[a] - vals[b]);
+      const pad = { l: 82, r: 40, t: 28, b: 34 };
+      const pl = plot(ctx, W, H, pad, [0, Math.max(...vals) * 1.2], [0, feats.length - 1], { x: "重要性", y: "" });
+      order.forEach((idx, rank) => {
+        const y = pl.Y(rank), h = pl.ph / feats.length * .6;
+        ctx.fillStyle = rank >= order.length - 3 ? "#dc2626" : "#2563eb";
+        ctx.fillRect(pl.X(0), y - h / 2, pl.X(vals[idx]) - pl.X(0), h);
+        ctx.fillStyle = "#475569"; ctx.font = "11px sans-serif"; ctx.textAlign = "right";
+        ctx.fillText(feats[idx], pad.l - 8, y + 3);
+        ctx.fillStyle = "#0f172a"; ctx.textAlign = "left";
+        ctx.fillText(vals[idx].toFixed(2), pl.X(vals[idx]) + 5, y + 3);
+      });
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("特征重要性（归一化后）", pad.l, pad.t - 10);
+      stopFn = () => {};
+    }
+    const params = buildControls(el, [{ key: "n", label: "特征数", min: 3, max: 8, step: 1, value: 6 }], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "示意：树模型给出的特征重要性条形图，按升序排列，值越大代表该特征对预测贡献越大。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
+  }
+
+  function demoConv(canvas, el) {
     const N = 28;
     const img = Array.from({ length: N }, () => new Array(N).fill(0));
     for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
       if (Math.abs(j - 8) + Math.abs(i - 13) < 7) img[i][j] = 1;
       if (Math.abs(i - 13) < 3 && j > 8 && j < 20) img[i][j] = 1;
-      if ((i - j) ** 2 + (i - 22) ** 2 < 25) img[i][j] = .8;
+      if ((i - j) ** 2 + (i - 22) ** 2 < 22) img[i][j] = .8;
     }
     const kernels = {
       edge: [-1, -1, -1, -1, 8, -1, -1, -1, -1],
       mean: [1 / 9, 1 / 9, 1 / 9, 1 / 9, 1 / 9, 1 / 9, 1 / 9, 1 / 9, 1 / 9],
-      sharpen: [0, -1, 0, -1, 5, -1, 0, -1, 0]
+      sharpen: [0, -1, 0, -1, 5, -1, 0, -1, 0],
+      sobel: [-1, 0, 1, -2, 0, 2, -1, 0, 1]
     };
-    const labels = { edge: "边缘检测", mean: "均值模糊", sharpen: "锐化" };
-    const keys = Object.keys(kernels);
-    let ki = 0, timer = null, stopped = false;
-    function apply(k) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const k = kernels[p.kernel], stride = p.stride;
       const out = Array.from({ length: N }, () => new Array(N).fill(0));
-      for (let i = 1; i < N - 1; i++) for (let j = 1; j < N - 1; j++) {
-        let s = 0;
-        for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) s += img[i + a][j + b] * k[(a + 1) * 3 + (b + 1)];
+      for (let i = 1; i < N - 1; i += stride) for (let j = 1; j < N - 1; j += stride) {
+        let s = 0; for (let a = -1; a <= 1; a++) for (let b = -1; b <= 1; b++) s += img[i + a][j + b] * k[(a + 1) * 3 + (b + 1)];
         out[i][j] = Math.max(0, Math.min(1, s));
       }
-      return out;
-    }
-    function draw() {
-      ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-      const cell = 8;
-      const drawImg = (data, ox) => {
+      ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+      const cell = 8, ox = 90, oy = 54;
+      const drawImg = (data, x0, title) => {
         for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
           const v = data[i][j];
-          ctx.fillStyle = `rgb(${Math.round(18 + v * 200)},${Math.round(180 - v * 120)},${Math.round(180 - v * 100)})`;
-          ctx.fillRect(ox + j * cell, 40 + i * cell, cell, cell);
+          ctx.fillStyle = `rgb(${Math.round(255 - v * 220)},${Math.round(255 - v * 180)},${Math.round(255 - v * 140)})`;
+          ctx.fillRect(x0 + j * cell, oy + i * cell, cell, cell);
         }
+        ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "center";
+        ctx.fillText(title, x0 + N * cell / 2, oy - 12);
       };
-      drawImg(img, 30);
-      drawImg(apply(kernels[keys[ki]]), w / 2 + 20);
-      ctx.fillStyle = "rgba(255,255,255,.85)"; ctx.font = "13px sans-serif";
-      ctx.fillText("原图", 30, 28);
-      ctx.fillText(labels[keys[ki]], w / 2 + 20, 28);
-      ctx.fillText("卷积核：" + keys[ki] + "（3×3）", 30, h - 14);
-      ki = (ki + 1) % keys.length;
-      timer = setTimeout(draw, 1800);
+      drawImg(img, ox, "输入图像");
+      drawImg(out, W / 2 + 50, p.kernel + " · stride=" + stride);
+      const cw = 12, cx = W - 54, cy = 50, ch = N * cell;
+      for (let i = 0; i < ch; i++) { const v = i / (ch - 1); ctx.fillStyle = `rgb(${Math.round(255 - v * 220)},${Math.round(255 - v * 180)},${Math.round(255 - v * 140)})`; ctx.fillRect(cx, cy + i, cw, 1); }
+      ctx.strokeStyle = "#cbd5e1"; ctx.strokeRect(cx, cy, cw, ch);
+      ctx.fillStyle = "#64748b"; ctx.font = "9px sans-serif"; ctx.textAlign = "center";
+      ctx.fillText("0", cx + cw / 2, cy + ch + 10); ctx.fillText("1", cx + cw / 2, cy - 4);
+      stopFn = () => {};
     }
-    draw();
-    return {
-      note: "卷积操作：左侧是输入图像，右侧是卷积核滑动后的输出。这里轮播边缘检测、均值模糊和锐化三种核。",
-      stop() { stopped = true; clearTimeout(timer); },
-      restart() { stopped = true; clearTimeout(timer); stopped = false; ki = 0; draw(); }
-    };
+    const params = buildControls(el, [
+      { key: "kernel", label: "卷积核", type: "select", value: "edge", options: ["edge", "sobel", "mean", "sharpen"] },
+      { key: "stride", label: "步长", min: 1, max: 2, step: 1, value: 1 }
+    ], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "卷积操作：卷积核在图像上按步长滑动，提取边缘、模糊或锐化等局部特征，右侧色条为像素值。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
   }
 
-  function drawAttention(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const N = 8;
-    const M = Array.from({ length: N }, (_, i) => Array.from({ length: N }, (_, j) => {
-      const d = Math.abs(i - j);
-      return Math.max(0, 1 - d * .18) * (0.65 + 0.35 * Math.sin(i * 1.7 + j * 0.9));
-    }));
-    const cell = 34, ox = 110, oy = 30;
-    for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
-      const v = M[i][j];
-      const r = Math.round(30 + v * 210), g = Math.round(180 - v * 130), b = Math.round(200 - v * 170);
-      ctx.fillStyle = `rgb(${r},${g},${b})`;
-      ctx.fillRect(ox + j * cell, oy + i * cell, cell - 2, cell - 2);
-    }
-    ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-    ctx.fillText("注意力权重热力图（示意）：越亮表示两个位置关联越强", 20, 24);
-    return { note: "示意：自注意力权重矩阵，行和列是序列位置，亮度表示一个位置对另一个位置的关注程度。" };
-  }
-
-  function drawSequence(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const tokens = ["x1", "x2", "x3", "x4", "x5"];
-    let t = 0, raf = null;
-    function frame() {
-      ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-      const boxW = 84, gap = 14, total = tokens.length * boxW + (tokens.length - 1) * gap;
-      const start = 20;
-      tokens.forEach((tk, i) => {
-        const x = start + i * (boxW + gap);
-        ctx.fillStyle = "#123b34"; ctx.fillRect(x, 70, boxW, 52);
-        ctx.strokeStyle = "rgba(45,212,191,.8)"; ctx.strokeRect(x, 70, boxW, 52);
-        ctx.fillStyle = "#d7e8e1"; ctx.font = "14px Consolas, monospace"; ctx.fillText(tk, x + 18, 102);
+  function demoAttention(canvas, el) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const N = 8;
+      const M = Array.from({ length: N }, (_, i) => Array.from({ length: N }, (_, j) => {
+        const d = Math.abs(i - j);
+        return Math.max(0, 1 - d * .2) * (.6 + .4 * Math.sin(i * 1.7 + j * .9));
+      }));
+      const cell = 30, ox = 70, oy = 44;
+      for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+        const v = M[i][j], t = clamp(v, 0, 1);
+        const r = Math.round(30 + t * 210), g = Math.round(180 - t * 140), b = Math.round(210 - t * 180);
+        ctx.fillStyle = `rgb(${r},${g},${b})`;
+        ctx.fillRect(ox + j * cell, oy + i * cell, cell - 2, cell - 2);
+        if (i === p.q - 1) { ctx.strokeStyle = "#dc2626"; ctx.lineWidth = 2; ctx.strokeRect(ox + j * cell, oy + i * cell, cell - 2, cell - 2); }
+      }
+      ctx.fillStyle = "#64748b"; ctx.font = "10px sans-serif"; ctx.textAlign = "center";
+      for (let i = 0; i < N; i++) { ctx.fillText("tok" + (i + 1), ox - 8, oy + i * cell + cell / 2 + 3); ctx.fillText("tok" + (i + 1), ox + i * cell + cell / 2, oy - 8); }
+      const bx = ox + N * cell + 70, bw = W - bx - 20, bh = H - oy - 30;
+      const bPad = { l: 0, r: 0, t: 0, b: 0 };
+      const vals = M[p.q - 1];
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("查询位置 " + p.q + " 的注意力权重", bx, oy - 4);
+      const maxV = Math.max(...vals);
+      vals.forEach((v, i) => {
+        const t = v / maxV, y = oy + 20 + i * (bh - 20) / N, hh = (bh - 20) / N * .6;
+        ctx.fillStyle = i === p.q - 1 ? "#dc2626" : "#2563eb";
+        ctx.fillRect(bx, y, t * bw, hh);
+        ctx.fillStyle = "#64748b"; ctx.font = "10px sans-serif"; ctx.textAlign = "left";
+        ctx.fillText("tok" + (i + 1) + "  " + v.toFixed(2), bx + t * bw + 5, y + hh / 2 + 3);
       });
-      const prog = ((t * .015) % 1);
-      const active = Math.floor(prog * tokens.length);
-      const x = start + active * (boxW + gap);
-      ctx.fillStyle = "rgba(244,114,182,.18)"; ctx.fillRect(x, 70, boxW, 52);
-      ctx.strokeStyle = "#f472b6"; ctx.lineWidth = 2; ctx.strokeRect(x, 70, boxW, 52);
-      const hval = 0.5 + 0.5 * Math.sin(t * .1);
-      ctx.fillStyle = "rgba(255,255,255,.55)"; ctx.font = "13px sans-serif";
-      ctx.fillText("隐藏状态", 20, 150);
-      ctx.fillStyle = "#2dd4bf"; ctx.fillRect(100, 140, 240 * hval, 18);
-      ctx.strokeStyle = "rgba(255,255,255,.3)"; ctx.strokeRect(100, 140, 240, 18);
-      ctx.fillStyle = "rgba(255,255,255,.7)";
-      ctx.fillText("输出", 20, 190);
-      ctx.fillText("循环单元按时间步读取序列，隐藏状态随时间更新（示意）", 20, h - 18);
-      t++;
-      raf = requestAnimationFrame(frame);
+      stopFn = () => {};
     }
-    raf = requestAnimationFrame(frame);
-    return {
-      note: "示意：RNN / LSTM 按时间步读取输入序列，隐藏状态不断更新并输出，粉色高亮表示当前处理的位置。",
-      stop() { cancelAnimationFrame(raf); },
-      restart() { cancelAnimationFrame(raf); t = 0; raf = requestAnimationFrame(frame); }
-    };
+    const params = buildControls(el, [{ key: "q", label: "查询位置", min: 1, max: 8, step: 1, value: 4 }], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "示意：自注意力权重热力图，红框为当前查询 token，右侧柱状图显示它对各位置分配的注意力权重。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
   }
 
-  function drawGenerative(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const r = rng(17), pts = [];
-    for (let i = 0; i < 180; i++) pts.push([(r() * 7 - 3.5), (r() * 7 - 3.5)]);
+  function demoSequence(canvas, el) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const T = 120, series = Array.from({ length: T }, (_, t) => Math.sin(t * .25) + .35 * Math.sin(t * .09));
+      const N = p.hidden;
+      const Win = Array.from({ length: N }, () => Array.from({ length: 1 }, () => (Math.random() - .5) * .4));
+      const Wres = Array.from({ length: N }, () => Array.from({ length: N }, () => (Math.random() - .5) * .5));
+      for (let i = 0; i < N; i++) { const s = Wres[i].reduce((a, v) => a + Math.abs(v), 0) || 1; Wres[i] = Wres[i].map(v => v / s * p.radius); }
+      const states = [], r0 = rng(31);
+      let state = new Array(N).fill(0);
+      for (let t = 0; t < T; t++) {
+        const z = Wres.map(row => row.reduce((s, w, k) => s + w * state[k], 0));
+        state = z.map((v, k) => Math.tanh(v + Win[k][0] * series[t]));
+        states.push([...state]);
+      }
+      const X = states.slice(0, -1), Y = series.slice(1);
+      const ridge = p.ridge;
+      const A = Array.from({ length: N + 1 }, () => new Array(N + 1).fill(0));
+      const b = new Array(N + 1).fill(0);
+      for (let t = 0; t < X.length; t++) {
+        const feat = [...X[t], 1];
+        for (let i = 0; i <= N; i++) { for (let j = 0; j <= N; j++) A[i][j] += feat[i] * feat[j]; b[i] += feat[i] * Y[t]; }
+      }
+      for (let i = 0; i <= N; i++) A[i][i] += ridge;
+      const Wout = solve(A, b);
+      const preds = X.map(feat => { const f = [...feat, 1]; let s = 0; for (let i = 0; i <= N; i++) s += Wout[i] * f[i]; return s; });
+      const pad = { l: 42, r: 18, t: 28, b: 36 };
+      const pl = plot(ctx, W, H, pad, [0, T - 1], [-1.8, 1.8], { x: "时间步", y: "值" });
+      ctx.strokeStyle = "#94a3b8"; ctx.lineWidth = 1.6;
+      ctx.beginPath(); series.forEach((v, i) => i === 0 ? ctx.moveTo(pl.X(i), pl.Y(v)) : ctx.lineTo(pl.X(i), pl.Y(v))); ctx.stroke();
+      ctx.strokeStyle = "#dc2626"; ctx.lineWidth = 1.8;
+      ctx.beginPath(); preds.forEach((v, i) => i === 0 ? ctx.moveTo(pl.X(i + 1), pl.Y(v)) : ctx.lineTo(pl.X(i + 1), pl.Y(v))); ctx.stroke();
+      let mse = 0; preds.forEach((v, i) => mse += (v - Y[i]) ** 2); mse /= preds.length;
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("MSE = " + mse.toFixed(4), pad.l, pad.t - 10);
+      legend(ctx, pad.l, H - 8, [{ c: "#94a3b8", label: "真实序列" }, { c: "#dc2626", label: "预测" }]);
+      stopFn = () => {};
+    }
+    const params = buildControls(el, [
+      { key: "hidden", label: "储备池单元", min: 4, max: 40, step: 2, value: 20 },
+      { key: "radius", label: "谱半径", min: .2, max: 1.2, step: .05, value: .9 },
+      { key: "ridge", label: "岭回归系数", min: .0001, max: .1, step: .0005, value: .001 }
+    ], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "回声状态网络（RNN 变体）示意：随机储备池把序列投影到高维，再用岭回归学习读出层，预测下一个时间步。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
+  }
+
+  function demoGenerative(canvas, el) {
     let raf = null;
-    function frame() {
-      ctx.fillStyle = "rgba(13,21,18,.22)"; ctx.fillRect(0, 0, w, h);
-      const X0 = -3.6, X1 = 3.6, Y0 = -3.3, Y1 = 3.3;
-      pts.forEach(p => {
-        const d = Math.hypot(p[0], p[1]) || 1e-6;
+    const r = rng(17), pts = [];
+    for (let i = 0; i < 220; i++) pts.push([(r() * 7 - 3.5), (r() * 7 - 3.5)]);
+    function frame(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const pad = { l: 42, r: 18, t: 28, b: 36 }, xr = [-3.6, 3.6], yr = [-3.3, 3.3];
+      const pl = plot(ctx, W, H, pad, xr, yr, { x: "z₁", y: "z₂" });
+      let err = 0;
+      pts.forEach(q => {
+        const d = Math.hypot(q[0], q[1]) || 1e-6;
         const pull = (d - 1.6) / d;
-        p[0] -= pull * p[0] * .025; p[1] -= pull * p[1] * .025;
-        p[0] += (r() - .5) * .08; p[1] += (r() - .5) * .08;
-        const x = (p[0] - X0) / (X1 - X0) * w, y = (p[1] - Y0) / (Y1 - Y0) * h;
-        ctx.fillStyle = "#2dd4bf"; ctx.beginPath(); ctx.arc(x, y, 2.5, 0, Math.PI * 2); ctx.fill();
+        q[0] -= pull * q[0] * p.lr; q[1] -= pull * q[1] * p.lr;
+        q[0] += (r() - .5) * p.noise; q[1] += (r() - .5) * p.noise;
+        err += Math.abs(d - 1.6);
+        ctx.fillStyle = "#2563eb"; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 2.3, 0, Math.PI * 2); ctx.fill();
       });
-      ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-      ctx.fillText("生成器把随机噪声逐步映射到目标分布（环）", 16, 24);
-      raf = requestAnimationFrame(frame);
+      err /= pts.length;
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("平均半径误差 " + err.toFixed(3), pad.l, pad.t - 10);
+      raf = requestAnimationFrame(() => frame(p));
     }
-    raf = requestAnimationFrame(frame);
-    return {
-      note: "示意：生成模型学习把随机噪声转换成目标分布。这里展示点云从随机散点逐步收敛成环形，表示生成质量逐渐提高。",
-      stop() { cancelAnimationFrame(raf); },
-      restart() { cancelAnimationFrame(raf); pts.forEach(p => { p[0] = r() * 7 - 3.5; p[1] = r() * 7 - 3.5; }); ctx.clearRect(0, 0, w, h); raf = requestAnimationFrame(frame); }
-    };
+    let stopFn = () => cancelAnimationFrame(raf);
+    const params = buildControls(el, [
+      { key: "lr", label: "学习率", min: .01, max: .1, step: .005, value: .03 },
+      { key: "noise", label: "噪声", min: 0, max: .4, step: .02, value: .12 }
+    ], p => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => frame(p)); });
+    raf = requestAnimationFrame(() => frame(params));
+    return { note: "示意：生成模型学习把随机噪声映射到目标分布（环），平均半径误差随迭代下降。", stop() { cancelAnimationFrame(raf); }, restart() { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => frame(params)); } };
   }
 
-  function drawDiffusion(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
+  function demoDiffusion(canvas, el) {
+    let raf = null, step = 0;
     const r = rng(18), pts = [];
     const centers = [[-1.8, 1], [1.8, 1], [0, -1.6]];
-    for (let i = 0; i < 180; i++) pts.push([r() * 7 - 3.5, r() * 6 - 3]);
-    let step = 0, raf = null;
-    function frame() {
-      ctx.fillStyle = "rgba(13,21,18,.25)"; ctx.fillRect(0, 0, w, h);
-      const X0 = -3.5, X1 = 3.5, Y0 = -3.2, Y1 = 3.2;
-      const noise = Math.max(0, .5 - step * .003);
-      pts.forEach((p, i) => {
+    for (let i = 0; i < 210; i++) pts.push([r() * 7 - 3.5, r() * 6 - 3]);
+    function frame(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const pad = { l: 42, r: 18, t: 28, b: 36 }, xr = [-3.5, 3.5], yr = [-3.2, 3.2];
+      const pl = plot(ctx, W, H, pad, xr, yr, { x: "x₁", y: "x₂" });
+      const sigma = Math.max(0, .6 - step / p.steps);
+      const palette = ["#2563eb", "#dc2626", "#16a34a"];
+      pts.forEach((q, i) => {
         const c = centers[i % 3];
-        p[0] += (c[0] - p[0]) * .04; p[1] += (c[1] - p[1]) * .04;
-        p[0] += (r() - .5) * noise; p[1] += (r() - .5) * noise;
-        const x = (p[0] - X0) / (X1 - X0) * w, y = (p[1] - Y0) / (Y1 - Y0) * h;
-        ctx.fillStyle = ["#2dd4bf", "#f472b6", "#fbbf24"][i % 3];
-        ctx.beginPath(); ctx.arc(x, y, 2.5, 0, Math.PI * 2); ctx.fill();
+        q[0] += (c[0] - q[0]) * (1.2 / p.steps); q[1] += (c[1] - q[1]) * (1.2 / p.steps);
+        q[0] += (r() - .5) * sigma; q[1] += (r() - .5) * sigma;
+        ctx.fillStyle = palette[i % 3]; ctx.beginPath(); ctx.arc(pl.X(q[0]), pl.Y(q[1]), 2.3, 0, Math.PI * 2); ctx.fill();
       });
-      ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-      ctx.fillText("从纯噪声逐步去噪，还原出三个簇（示意）", 16, 24);
+      ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("去噪步 " + step + " / " + p.steps + "   噪声 σ = " + sigma.toFixed(2), pad.l, pad.t - 10);
       step++;
-      raf = requestAnimationFrame(frame);
+      raf = requestAnimationFrame(() => frame(p));
     }
-    raf = requestAnimationFrame(frame);
-    return {
-      note: "示意：扩散模型从纯噪声出发，每一步去除一点噪声，最终还原出清晰的数据结构。",
-      stop() { cancelAnimationFrame(raf); },
-      restart() { cancelAnimationFrame(raf); pts.forEach(p => { p[0] = r() * 7 - 3.5; p[1] = r() * 6 - 3; }); step = 0; ctx.clearRect(0, 0, w, h); raf = requestAnimationFrame(frame); }
-    };
+    const params = buildControls(el, [{ key: "steps", label: "去噪步数", min: 10, max: 120, step: 5, value: 40 }], p => { cancelAnimationFrame(raf); step = 0; raf = requestAnimationFrame(() => frame(p)); });
+    raf = requestAnimationFrame(() => frame(params));
+    return { note: "示意：扩散模型从纯噪声出发逐步去噪，还原出三个数据簇；步数越多去噪越充分。", stop() { cancelAnimationFrame(raf); }, restart() { cancelAnimationFrame(raf); step = 0; raf = requestAnimationFrame(() => frame(params)); } };
   }
 
-  function drawRL(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const N = 6, start = 0, goal = 35, obstacles = new Set([9, 10, 16, 22, 28]);
-    const Q = Array.from({ length: 36 }, () => [0, 0, 0, 0]);
-    const moves = [[-1, 0], [1, 0], [0, -1], [0, 1]];
-    function state(rr, cc) { return rr * N + cc; }
-    function valid(rr, cc) { return rr >= 0 && rr < N && cc >= 0 && cc < N && !obstacles.has(state(rr, cc)); }
-    for (let ep = 0; ep < 400; ep++) {
-      let s = start;
-      for (let st = 0; st < 120; st++) {
-        if (s === goal) break;
-        const eps = Math.max(.05, 1 - ep / 250);
-        let a;
-        if (Math.random() < eps) a = Math.floor(Math.random() * 4);
-        else { a = 0; for (let k = 1; k < 4; k++) if (Q[s][k] > Q[s][a]) a = k; }
+  function demoRL(canvas, el) {
+    let timer = null, stopped = false;
+    function run(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const N = 6, start = 0, goal = 35, obstacles = new Set([9, 10, 16, 22, 28]);
+      const Q = Array.from({ length: 36 }, () => [0, 0, 0, 0]);
+      const moves = [[-1, 0], [1, 0], [0, -1], [0, 1]];
+      const st = (r, c) => r * N + c;
+      const valid = (r, c) => r >= 0 && r < N && c >= 0 && c < N && !obstacles.has(st(r, c));
+      const rewards = [];
+      for (let ep = 0; ep < p.episodes; ep++) {
+        let s = start, total = 0;
+        for (let k = 0; k < 100; k++) {
+          if (s === goal) break;
+          const eps = Math.max(.05, 1 - ep / (p.episodes * .6));
+          let a;
+          if (Math.random() < eps) a = Math.floor(Math.random() * 4);
+          else { a = 0; for (let q = 1; q < 4; q++) if (Q[s][q] > Q[s][a]) a = q; }
+          const rr = Math.floor(s / N), cc = s % N;
+          const nr = rr + moves[a][0], nc = cc + moves[a][1];
+          let s2 = s, reward = -.05;
+          if (valid(nr, nc)) s2 = st(nr, nc); else reward = -1;
+          if (s2 === goal) reward = 10;
+          Q[s][a] += .2 * (reward + p.gamma * Math.max(...Q[s2]) - Q[s][a]);
+          s = s2; total += reward;
+        }
+        rewards.push(total);
+      }
+      let path = [], s = start, guard = 0;
+      while (s !== goal && guard++ < 100) {
         const rr = Math.floor(s / N), cc = s % N;
+        let a = 0; for (let q = 1; q < 4; q++) if (Q[s][q] > Q[s][a]) a = q;
+        path.push(s);
         const nr = rr + moves[a][0], nc = cc + moves[a][1];
-        let s2 = s, reward = -0.05;
-        if (valid(nr, nc)) { s2 = state(nr, nc); } else reward = -1;
-        if (s2 === goal) reward = 10;
-        Q[s][a] += 0.2 * (reward + 0.95 * Math.max(...Q[s2]) - Q[s][a]);
-        s = s2;
+        s = valid(nr, nc) ? st(nr, nc) : s;
       }
-    }
-    let path = [], s = start, guard = 0;
-    while (s !== goal && guard++ < 100) {
-      const rr = Math.floor(s / N), cc = s % N;
-      let a = 0; for (let k = 1; k < 4; k++) if (Q[s][k] > Q[s][a]) a = k;
-      path.push(s);
-      const nr = rr + moves[a][0], nc = cc + moves[a][1];
-      s = valid(nr, nc) ? state(nr, nc) : s;
-      if (path.length > 1 && s === path[path.length - 1]) break;
-    }
-    path.push(goal);
-    let step = 0, timer = null, stopped = false;
-    function draw() {
-      ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-      const cell = 48, ox = 90, oy = 22;
-      for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
-        const s = state(i, j);
-        ctx.fillStyle = s === goal ? "#fbbf24" : obstacles.has(s) ? "#334155" : "#123b34";
-        ctx.fillRect(ox + j * cell, oy + i * cell, cell - 3, cell - 3);
+      path.push(goal);
+      let step = 0;
+      function draw() {
+        if (stopped) return;
+        ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+        const cell = 42, ox = 52, oy = 44;
+        for (let i = 0; i < N; i++) for (let j = 0; j < N; j++) {
+          const s2 = st(i, j);
+          ctx.fillStyle = s2 === goal ? "#facc15" : obstacles.has(s2) ? "#334155" : "#e2e8f0";
+          ctx.fillRect(ox + j * cell, oy + i * cell, cell - 3, cell - 3);
+        }
+        path.forEach(s2 => {
+          ctx.strokeStyle = "#2563eb"; ctx.lineWidth = 2;
+          ctx.strokeRect(ox + (s2 % N) * cell, oy + Math.floor(s2 / N) * cell, cell - 3, cell - 3);
+        });
+        const cur = path[Math.min(step, path.length - 1)];
+        ctx.fillStyle = "#dc2626";
+        ctx.fillRect(ox + (cur % N) * cell + 9, oy + Math.floor(cur / N) * cell + 9, cell - 21, cell - 21);
+        const rx0 = ox + N * cell + 46;
+        const rPad = { l: 42, r: 0, t: 0, b: 0 };
+        const rr = rewards.slice(Math.max(0, rewards.length - 200));
+        const rW = W - rx0 - 8, rH = H - oy - 16;
+        const rpl = plot(ctx, W, H, { l: rx0 + 34, r: 16, t: 44, b: 34 }, [0, rr.length - 1], [Math.min(...rr) - 1, Math.max(...rr) + 1], { x: "轮次", y: "回报" });
+        ctx.strokeStyle = "#16a34a"; ctx.lineWidth = 1.8;
+        ctx.beginPath(); rr.forEach((v, i) => i === 0 ? ctx.moveTo(rpl.X(i), rpl.Y(v)) : ctx.lineTo(rpl.X(i), rpl.Y(v))); ctx.stroke();
+        ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
+        ctx.fillText("Q-Learning · γ = " + p.gamma, ox, oy - 12);
+        if (step < path.length - 1) { step++; timer = setTimeout(draw, 240); }
       }
-      path.forEach((s, i) => {
-        const rr = Math.floor(s / N), cc = s % N;
-        ctx.strokeStyle = "rgba(45,212,191,.8)"; ctx.lineWidth = 2;
-        ctx.strokeRect(ox + cc * cell, oy + rr * cell, cell - 3, cell - 3);
-      });
-      const cur = path[Math.min(step, path.length - 1)];
-      const rr = Math.floor(cur / N), cc = cur % N;
-      ctx.fillStyle = "#f472b6";
-      ctx.fillRect(ox + cc * cell + 8, oy + rr * cell + 8, cell - 19, cell - 19);
-      ctx.fillStyle = "rgba(255,255,255,.8)"; ctx.font = "13px sans-serif";
-      ctx.fillText("Q-Learning：粉色智能体沿学到的策略走向黄色目标", 16, 22);
-      if (step < path.length - 1) { step++; timer = setTimeout(draw, 240); }
+      draw();
     }
-    draw();
-    return {
-      note: "Q-Learning 在 6×6 网格中试错学习：青色描边是最优路径，粉色方块沿策略移动，黄色是目标，深灰是障碍。",
-      stop() { stopped = true; clearTimeout(timer); },
-      restart() { stopped = true; clearTimeout(timer); stopped = false; step = 0; draw(); }
-    };
+    const params = buildControls(el, [
+      { key: "gamma", label: "折扣因子 γ", min: .5, max: .99, step: .01, value: .95 },
+      { key: "episodes", label: "训练轮数", min: 50, max: 500, step: 25, value: 300 }
+    ], p => { stopped = true; clearTimeout(timer); stopped = false; run(p); });
+    run(params);
+    return { note: "Q-Learning：左图为智能体沿学到的策略走迷宫，右图为每轮累计回报的上升曲线；γ 越接近 1 越看重长期回报。", stop() { stopped = true; clearTimeout(timer); }, restart() { stopped = true; clearTimeout(timer); stopped = false; run(params); } };
   }
 
-  function drawCurve(canvas) {
-    const { ctx, w, h } = setupCanvas(canvas, 600, 338);
-    const n = 80, vals = [];
-    for (let i = 0; i < n; i++) vals.push(1 - Math.exp(-i / 18) + Math.sin(i * .7) * .06 * Math.exp(-i / 30));
-    let i = 0, raf = null;
-    function frame() {
-      if (i < n) i++;
-      ctx.fillStyle = "#0d1512"; ctx.fillRect(0, 0, w, h);
-      const px = k => 60 + k / (n - 1) * (w - 90), py = v => h - 46 - v * (h - 90);
-      ctx.strokeStyle = "rgba(255,255,255,.14)";
-      ctx.beginPath(); ctx.moveTo(60, py(0)); ctx.lineTo(w - 30, py(0)); ctx.stroke();
-      ctx.fillStyle = "rgba(255,255,255,.7)"; ctx.font = "13px sans-serif";
-      ctx.fillText("奖励", 16, py(0) + 4);
-      ctx.fillText("训练轮数", w - 70, h - 16);
-      ctx.strokeStyle = "#2dd4bf"; ctx.lineWidth = 2.5;
+  function demoCurve(canvas, el) {
+    let stopFn = null;
+    function render(p) {
+      const { ctx, W, H } = baseCanvas(canvas, 640, 360);
+      const n = 100, vals = [];
+      for (let i = 0; i < n; i++) vals.push(1 - Math.exp(-i / 18) + Math.sin(i * .7) * p.noise * Math.exp(-i / 30));
+      const k = Math.max(1, Math.round(n * p.smooth));
+      const sm = [];
+      for (let i = 0; i < n; i++) { let s = 0, c = 0; for (let j = Math.max(0, i - k); j <= Math.min(n - 1, i + k); j++) { s += vals[j]; c++; } sm.push(s / c); }
+      const pad = { l: 46, r: 18, t: 28, b: 38 };
+      const pl = plot(ctx, W, H, pad, [0, n - 1], [0, 1.15], { x: "训练轮数", y: "累计回报（归一化）" });
+      ctx.fillStyle = "rgba(37,99,235,.16)";
       ctx.beginPath();
-      for (let k = 0; k < i; k++) { const x = px(k), y = py(vals[k]); k === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y); }
-      ctx.stroke();
-      ctx.fillStyle = "#f472b6"; ctx.beginPath(); ctx.arc(px(i - 1), py(vals[i - 1]), 4, 0, Math.PI * 2); ctx.fill();
-      if (i < n) raf = requestAnimationFrame(frame);
+      for (let i = 0; i < n; i++) { const up = sm[i] + .08, dn = sm[i] - .08; i === 0 ? ctx.moveTo(pl.X(i), pl.Y(up)) : ctx.lineTo(pl.X(i), pl.Y(up)); }
+      for (let i = n - 1; i >= 0; i--) ctx.lineTo(pl.X(i), pl.Y(sm[i] - .08));
+      ctx.closePath(); ctx.fill();
+      ctx.strokeStyle = "#2563eb"; ctx.lineWidth = 2;
+      ctx.beginPath(); sm.forEach((v, i) => i === 0 ? ctx.moveTo(pl.X(i), pl.Y(v)) : ctx.lineTo(pl.X(i), pl.Y(v))); ctx.stroke();
+      stopFn = () => {};
     }
-    raf = requestAnimationFrame(frame);
-    return {
-      note: "示意：训练过程中累计奖励逐步上升并趋于稳定，对应策略在不断改进。",
-      stop() { cancelAnimationFrame(raf); },
-      restart() { cancelAnimationFrame(raf); i = 0; raf = requestAnimationFrame(frame); }
-    };
+    const params = buildControls(el, [
+      { key: "smooth", label: "平滑窗口", min: 0, max: 1, step: .05, value: .1 },
+      { key: "noise", label: "波动幅度", min: 0, max: .4, step: .02, value: .12 }
+    ], p => { if (stopFn) stopFn(); render(p); });
+    render(params);
+    return { note: "示意：强化学习训练曲线，蓝色阴影为波动范围；平滑窗口越大曲线越稳定。", stop() { if (stopFn) stopFn(); }, restart() { render(params); } };
   }
 
-  function startDemo(canvas, tech) {
-    if (canvas._handle && canvas._handle.stop) canvas._handle.stop();
-    let handle;
-    switch (tech.demo.type) {
-      case "regression": handle = drawRegression(canvas); break;
-      case "boundary": handle = drawBoundaryDemo(canvas, tech.demo.algo); break;
-      case "kmeans": handle = drawKMeans(canvas); break;
-      case "dbscan": handle = drawDBSCAN(canvas); break;
-      case "dendrogram": handle = drawDendrogram(canvas); break;
-      case "pca": handle = drawPCA(canvas); break;
-      case "projection": handle = drawProjection(canvas); break;
-      case "anomaly": handle = drawAnomaly(canvas); break;
-      case "importance": handle = drawImportance(canvas); break;
-      case "conv": handle = drawConv(canvas); break;
-      case "attention": handle = drawAttention(canvas); break;
-      case "sequence": handle = drawSequence(canvas); break;
-      case "generative": handle = drawGenerative(canvas); break;
-      case "diffusion": handle = drawDiffusion(canvas); break;
-      case "rl": handle = drawRL(canvas); break;
-      case "curve": handle = drawCurve(canvas); break;
-      default: handle = drawProjection(canvas);
+  function startDemo(canvas, el, tech) {
+    const t = tech.demo;
+    switch (t.type) {
+      case "regression": return demoRegression(canvas, el);
+      case "boundary": return demoBoundary(canvas, el, t.algo);
+      case "kmeans": return demoKMeans(canvas, el);
+      case "dbscan": return demoDBSCAN(canvas, el);
+      case "dendrogram": return demoDendrogram(canvas, el);
+      case "pca": return demoPCA(canvas, el);
+      case "projection": return demoProjection(canvas, el);
+      case "anomaly": return demoAnomaly(canvas, el);
+      case "importance": return demoImportance(canvas, el);
+      case "conv": return demoConv(canvas, el);
+      case "attention": return demoAttention(canvas, el);
+      case "sequence": return demoSequence(canvas, el);
+      case "generative": return demoGenerative(canvas, el);
+      case "diffusion": return demoDiffusion(canvas, el);
+      case "rl": return demoRL(canvas, el);
+      case "curve": return demoCurve(canvas, el);
+      default: return demoProjection(canvas, el);
     }
-    canvas._handle = handle;
-    return handle;
   }
 
   // Hero network background
@@ -1473,7 +1677,7 @@
     }
     if (!reducedMotion) netRaf = requestAnimationFrame(netDraw);
   }
-  function netStart() { netResize(); if (reducedMotion) netDraw(); else netDraw(); }
+  function netStart() { netResize(); netDraw(); }
   window.addEventListener("resize", () => { if (netRaf) cancelAnimationFrame(netRaf); netStart(); });
 
   renderRoadmap();
