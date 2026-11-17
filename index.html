@@ -699,6 +699,16 @@
     return { X, y };
   }
 
+  function makeMoons(n, seed, noise = .18) {
+    const r = rng(seed), X = [], y = [];
+    for (let i = 0; i < n; i++) {
+      const t = Math.PI * r();
+      if (i % 2 === 0) { X.push([Math.cos(t) + (r() * 2 - 1) * noise, Math.sin(t) + (r() * 2 - 1) * noise]); y.push(0); }
+      else { X.push([1 - Math.cos(t) + (r() * 2 - 1) * noise, .5 - Math.sin(t) + (r() * 2 - 1) * noise]); y.push(1); }
+    }
+    return { X, y };
+  }
+
   function standardize(X) {
     const n = X.length, mu = [0, 0], sd = [1, 1];
     for (let f = 0; f < 2; f++) { mu[f] = X.reduce((s, p) => s + p[f], 0) / n; sd[f] = Math.sqrt(X.reduce((s, p) => s + (p[f] - mu[f]) ** 2, 0) / n) || 1; }
@@ -708,6 +718,7 @@
   function trainLogistic(X, y, p) {
     const { Xs, mu, sd } = standardize(X), n = X.length;
     let w = [0, 0], b = 0;
+    const C = Math.pow(10, p.logC), lr = .5;
     for (let it = 0; it < p.iters; it++) {
       let gw = [0, 0], gb = 0;
       for (let i = 0; i < n; i++) {
@@ -715,7 +726,8 @@
         const e = 1 / (1 + Math.exp(-z)) - y[i];
         gw[0] += e * Xs[i][0]; gw[1] += e * Xs[i][1]; gb += e;
       }
-      w[0] -= p.lr * gw[0] / n; w[1] -= p.lr * gw[1] / n; b -= p.lr * gb / n;
+      gw[0] += w[0] / C; gw[1] += w[1] / C;
+      w[0] -= lr * gw[0] / n; w[1] -= lr * gw[1] / n; b -= lr * gb / n;
     }
     return x => { const a = (x[0] - mu[0]) / sd[0], c = (x[1] - mu[1]) / sd[1]; return 1 / (1 + Math.exp(-(w[0] * a + w[1] * c + b))); };
   }
@@ -838,7 +850,7 @@
   };
 
   const BOUNDARY_CONTROLS = {
-    logistic: [{ key: "iters", label: "迭代次数", min: 100, max: 1000, step: 50, value: 500 }, { key: "lr", label: "学习率", min: .1, max: 1, step: .05, value: .6 }],
+    logistic: [{ key: "logC", label: "log₁₀ C", min: -2, max: 2, step: .1, value: 0 }, { key: "iters", label: "迭代次数", min: 200, max: 1200, step: 50, value: 600 }],
     svm: [{ key: "logC", label: "log₁₀ C", min: -2, max: 2, step: .1, value: 0 }],
     knn: [{ key: "k", label: "K", min: 1, max: 25, step: 1, value: 7 }, { key: "metric", label: "距离", type: "select", value: "euclidean", options: ["euclidean", "manhattan"] }],
     tree: [{ key: "maxDepth", label: "最大深度", min: 1, max: 8, step: 1, value: 4 }, { key: "minSplit", label: "最小分裂样本", min: 2, max: 20, step: 1, value: 3 }],
@@ -847,7 +859,7 @@
     mlp: [{ key: "hidden", label: "隐藏单元", type: "select", value: 16, options: [4, 8, 16, 32] }, { key: "lr", label: "学习率", min: .1, max: 1, step: .05, value: .3 }, { key: "iters", label: "迭代次数", min: 200, max: 2000, step: 100, value: 1200 }]
   };
   const BOUNDARY_NOTES = {
-    logistic: "逻辑回归：背景色表示 P(y=1)，蓝到红代表概率从 0 到 1；拖动参数观察决策边界与准确率变化。",
+    logistic: "逻辑回归：双月牙数据是非线性分布，线性边界会随正则化参数 C 明显移动；背景色表示 P(y=1)。",
     svm: "线性 SVM：白线为最大间隔决策边界，描边点为支持向量；log₁₀ C 越大越拟合数据。",
     knn: "K 近邻：决策区域随 K 与距离度量变化；K 越小边界越曲折、越易过拟合。",
     tree: "决策树：边界由轴对齐的矩形构成，深度越大越复杂、越容易过拟合。",
@@ -859,15 +871,17 @@
   function renderBoundary(canvas, algo, p) {
     const { ctx, W, H } = baseCanvas(canvas, 640, 360);
     const pad = { l: 46, r: 64, t: 30, b: 36 };
-    const data = makeBlobs(220, 5);
+    const data = makeMoons(240, 5);
     const trained = TRAINERS[algo](data.X, data.y, p);
-    const model = algo === "svm" ? (x, y) => trained.predict(x, y) : trained;
-    const xr = [-3.8, 3.8], yr = [-3.8, 3.8];
+    const model = algo === "svm" ? (q) => trained.predict(q) : trained;
+    const xs = data.X.map(q => q[0]), ys = data.X.map(q => q[1]);
+    const xr = [Math.min(...xs) - .3, Math.max(...xs) + .3];
+    const yr = [Math.min(...ys) - .3, Math.max(...ys) + .3];
     const pl = plot(ctx, W, H, pad, xr, yr, { x: "特征 1", y: "特征 2" });
     const GX = 130, GY = 82;
     for (let i = 0; i < GX; i++) for (let j = 0; j < GY; j++) {
       const x = xr[0] + (xr[1] - xr[0]) * i / GX, y = yr[0] + (yr[1] - yr[0]) * j / GY;
-      ctx.fillStyle = css(diverging(model(x, y)));
+      ctx.fillStyle = css(diverging(model([x, y])));
       ctx.fillRect(pl.x0 + i * pl.pw / GX, pl.y0 + j * pl.ph / GY, pl.pw / GX + 1, pl.ph / GY + 1);
     }
     const bound = [];
@@ -875,7 +889,7 @@
       const y = yr[0] + (yr[1] - yr[0]) * j / 160;
       for (let i = 0; i < 240; i++) {
         const x0 = xr[0] + (xr[1] - xr[0]) * i / 240, x1 = xr[0] + (xr[1] - xr[0]) * (i + 1) / 240;
-        const p0 = model(x0, y), p1 = model(x1, y);
+        const p0 = model([x0, y]), p1 = model([x1, y]);
         if ((p0 - .5) * (p1 - .5) < 0) bound.push([x0 + (x1 - x0) * (.5 - p0) / (p1 - p0), y]);
       }
     }
@@ -892,7 +906,7 @@
       trained.supports.forEach(i => { ctx.beginPath(); ctx.arc(pl.X(data.X[i][0]), pl.Y(data.X[i][1]), 5.5, 0, Math.PI * 2); ctx.stroke(); });
     }
     let correct = 0;
-    data.X.forEach((q, i) => { if ((model(q[0], q[1]) >= .5 ? 1 : 0) === data.y[i]) correct++; });
+    data.X.forEach((q, i) => { if ((model(q) >= .5 ? 1 : 0) === data.y[i]) correct++; });
     ctx.fillStyle = "#0f172a"; ctx.font = "12px sans-serif"; ctx.textAlign = "left";
     ctx.fillText("训练准确率 " + (correct / data.X.length * 100).toFixed(1) + "%", pad.l + 8, pad.t - 10);
     colorbar(ctx, W - 52, pad.t, 12, H - pad.t - pad.b);
