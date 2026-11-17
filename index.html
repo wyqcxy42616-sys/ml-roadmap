@@ -157,6 +157,12 @@
   .app-pitfalls { margin-top: 16px; }
   .app-pitfalls ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
   .app-pitfalls li { font-size: 13.5px; color: var(--muted); }
+  .strip-demo { margin-top: 18px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; overflow: hidden; }
+  .strip-tools { display: flex; flex-wrap: wrap; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); background: #fbfcfb; }
+  .strip-layout { display: grid; grid-template-columns: 1fr 240px; gap: 14px; padding: 14px; }
+  .strip-canvas { display: block; width: 100%; aspect-ratio: 16 / 9; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+  .strip-result { font-size: 13.5px; color: var(--ink); line-height: 1.7; }
+  .strip-result b { color: #be123c; }
 
   .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
   .flow-item { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 16px; min-height: 148px; }
@@ -248,6 +254,7 @@
     .app-col { grid-template-columns: 1fr; }
     .app-io { grid-template-columns: 1fr; }
     .app-meta { grid-template-columns: 1fr; }
+    .strip-layout { grid-template-columns: 1fr; }
     .flow { grid-template-columns: 1fr; }
     .lib-grid { grid-template-columns: 1fr; }
     .step-body-grid { grid-template-columns: 1fr; }
@@ -528,24 +535,24 @@
     },
     {
       id: "imaging", icon: "i-grid", color: "rose",
-      title: "图像智能定量", tag: "从病理切片或医学影像中自动分割结构并提取定量指标",
-      goal: "自动分割医学图像中的目标结构，并提取面积、体积、密度、阳性率等可重复的定量指标。",
-      io: [["输入数据","病理切片 WSI、CT/MRI、X 光等影像及对应标注掩膜"],["输出结果","分割掩膜、定量指标表、可视化报告"]],
+      title: "图像智能定量", tag: "生成或拍摄试纸/比色图像，按纹理与颜色特征回归出浓度",
+      goal: "把试纸、比色卡或图片的颜色与纹理特征映射到连续浓度：先用带浓度标签的图像训练回归模型，再对无标记图像自动估计浓度。",
+      io: [["输入数据","带浓度标签的试纸/比色图像，标签为连续数值（如 0–100 mg/L）"],["输出结果","无标记图像的预测浓度、标准曲线、R²/RMSE 等回归指标"]],
       workflow: [
-        ["图像获取与去标识","统一格式和像素间距，去除患者隐私信息"],
-        ["标注与质控","制定标注规范并多人标注，用 Cohen's kappa 评估一致性"],
-        ["预处理与增强","归一化、重采样、旋转翻转和颜色扰动"],
-        ["模型训练","选择 2D/2.5D/3D 分割网络，常用 Dice+交叉熵损失"],
-        ["分割评估","看 Dice、IoU、HD95、ASSD 等指标"],
-        ["定量指标提取","计算面积/体积/密度/阳性率，注意像素间距换算"],
-        ["统计与一致性","与人工测量做 Bland-Altman 和 ICC 一致性分析"],
-        ["可视化与报告","生成热图、掩膜叠加图并批量导出"]
+        ["图像生成与标准化","统一光照、背景、拍摄距离和白平衡，尽量固定角度"],
+        ["浓度标注","为每张图像标注真实浓度，建立标准曲线所需的浓度梯度"],
+        ["ROI 提取","定位检测线/反应区，自动裁出待分析区域"],
+        ["颜色与纹理特征","提取 RGB/HSV/Lab 均值与方差、灰度共生矩阵（对比度/能量）和 LBP 纹理"],
+        ["回归建模","从特征到浓度建立映射，先线性回归/PLS，再尝试随机森林、SVR 或 CNN 回归"],
+        ["模型评估","看 R²、RMSE、MAE、检测限 LOD 和重复性变异系数 CV"],
+        ["未知图像预测","对新图像提取同样特征，输出预测浓度"],
+        ["部署","封装为拍照即测的实时定量工具"]
       ],
-      databases: [["TCIA","多模态癌症影像","公开下载"],["Camelyon","乳腺癌淋巴结转移切片","公开下载"],["NIH ChestX-ray","胸部 X 光片","公开下载"],["Grand Challenge","各器官分割竞赛数据","公开下载"]],
-      algorithms: [["U-Net","医学分割经典编码-解码架构","深度、通道数"],["nnU-Net","自动调参的强分割基线","自动配置"],["DeepLab","空洞卷积语义分割","output_stride"],["Mask R-CNN","实例分割","检测阈值"],["SAM","通用图像分割基础模型","提示方式"]],
-      metrics: ["Dice","IoU","HD95","ASSD","ICC"],
-      tools: ["Python","PyTorch","MONAI","SimpleITK","OpenSlide"],
-      pitfalls: ["像素间距不一致","标注不一致","切片间信息丢失","同患者不同切片造成数据泄漏"]
+      databases: [["自制试纸数据集","按浓度梯度生成或拍摄，是核心训练数据","自建"],["公开比色/胶体金文献数据","可用于方法参照","文献获取"],["ImageNet 预训练权重","CNN 迁移学习的起点","公开下载"],["Open Images","通用图像，可用于预训练","公开下载"]],
+      algorithms: [["线性回归 / PLS","颜色特征与浓度的基线模型","正则化强度"],["随机森林回归","稳健、处理非线性特征","n_estimators、max_depth"],["支持向量回归","小样本连续回归","C、epsilon"],["XGBoost 回归","特征较多时精度更高","learning_rate、max_depth"],["CNN 回归","直接从图像端到端学纹理颜色","迁移学习、学习率"]],
+      metrics: ["R²","RMSE","MAE","LOD","CV"],
+      tools: ["Python","OpenCV","scikit-image","scikit-learn","PyTorch / ONNX"],
+      pitfalls: ["光照和拍摄条件变化","颜色空间不一致","ROI 定位偏差","浓度范围外推不可靠","标准曲线过拟合"]
     },
     {
       id: "biomarker", icon: "i-flask", color: "amber",
@@ -590,6 +597,17 @@
             <div><h4>常用工具</h4><div class="tag-row">${a.tools.map(m => `<span class="chip">${m}</span>`).join("")}</div></div>
           </div>
           <div class="app-pitfalls"><h4>常见坑与注意事项</h4><ul>${a.pitfalls.map(p => `<li>${p}</li>`).join("")}</ul></div>
+          ${a.id === "imaging" ? `
+          <div class="strip-demo">
+            <div class="strip-tools">
+              <button class="copy-btn" id="strip-train">生成 40 张训练试纸并训练</button>
+              <button class="copy-btn" id="strip-predict">生成未知试纸并预测</button>
+            </div>
+            <div class="strip-layout">
+              <canvas id="strip-canvas" class="strip-canvas"></canvas>
+              <div class="strip-result" id="strip-result">点击“生成训练试纸”开始：程序会生成不同浓度的试纸图像，提取颜色特征并拟合标准曲线。</div>
+            </div>
+          </div>` : ""}
         </div>
       </article>`).join("");
   }
@@ -598,6 +616,61 @@
     const card = e.target.closest(".app-card");
     if (btn && card) card.classList.toggle("open");
   });
+
+  function initStripDemo() {
+    const canvas = document.getElementById("strip-canvas");
+    if (!canvas) return;
+    const result = document.getElementById("strip-result");
+    let model = null, samples = [];
+    document.getElementById("strip-train").onclick = () => {
+      const r = rng(42);
+      samples = [];
+      for (let i = 0; i < 40; i++) {
+        const c = r() * 100;
+        samples.push({ c, intensity: 235 - 1.65 * c + (r() * 2 - 1) * 12 });
+      }
+      const mc = samples.reduce((s, q) => s + q.c, 0) / samples.length;
+      const mi = samples.reduce((s, q) => s + q.intensity, 0) / samples.length;
+      let cov = 0, vr = 0;
+      samples.forEach(q => { cov += (q.c - mc) * (q.intensity - mi); vr += (q.c - mc) ** 2; });
+      const a = cov / vr, b = mi - a * mc;
+      model = { a, b };
+      const { ctx, W, H } = baseCanvas(canvas, 640, 320);
+      const pad = { l: 48, r: 18, t: 28, b: 38 };
+      const ys = samples.map(q => q.intensity);
+      const pl = plot(ctx, W, H, pad, [0, 100], [Math.min(...ys) - 12, Math.max(...ys) + 12], { x: "真实浓度", y: "平均灰度" });
+      samples.forEach(q => { ctx.fillStyle = "#2563eb"; ctx.beginPath(); ctx.arc(pl.X(q.c), pl.Y(q.intensity), 3, 0, Math.PI * 2); ctx.fill(); });
+      ctx.strokeStyle = "#dc2626"; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.moveTo(pl.X(0), pl.Y(b)); ctx.lineTo(pl.X(100), pl.Y(a * 100 + b)); ctx.stroke();
+      let sse = 0, sst = 0;
+      samples.forEach(q => { const p = a * q.c + b; sse += (p - q.intensity) ** 2; sst += (q.intensity - mi) ** 2; });
+      result.innerHTML = "已生成 40 张训练试纸并拟合标准曲线：<b>灰度 = " + a.toFixed(2) + " × 浓度 + " + b.toFixed(1) + "</b>，R² = " + (1 - sse / (sst || 1)).toFixed(3) + "。浓度越高，检测线颜色越深（灰度越低）。";
+    };
+    document.getElementById("strip-predict").onclick = () => {
+      if (!model) { result.textContent = "请先点击“生成训练试纸并训练”。"; return; }
+      const trueC = 8 + Math.random() * 84;
+      const intensity = 235 - 1.65 * trueC + (Math.random() * 2 - 1) * 8;
+      const predC = (intensity - model.b) / model.a;
+      const { ctx, W, H } = baseCanvas(canvas, 640, 320);
+      ctx.fillStyle = "#f8fafc"; ctx.fillRect(0, 0, W, H);
+      const sx = 220, sy = 46, sw = 200, sh = 240;
+      ctx.fillStyle = "#fff"; ctx.strokeStyle = "#cbd5e1"; ctx.lineWidth = 1.5;
+      ctx.fillRect(sx, sy, sw, sh); ctx.strokeRect(sx, sy, sw, sh);
+      const bandH = 34, bandY = sy + 66;
+      const v = Math.max(0, Math.min(235, intensity));
+      ctx.fillStyle = `rgb(${Math.round(v)},${Math.round(v)},${Math.round(v)})`;
+      ctx.fillRect(sx + 12, bandY, sw - 24, bandH);
+      ctx.fillStyle = "#475569"; ctx.font = "13px sans-serif"; ctx.textAlign = "center";
+      ctx.fillText("检测线（未知浓度）", sx + sw / 2, bandY - 10);
+      ctx.fillText("灰度 " + v.toFixed(0), sx + sw / 2, bandY + bandH + 18);
+      ctx.fillStyle = "#0f172a"; ctx.font = "14px sans-serif"; ctx.textAlign = "left";
+      ctx.fillText("预测浓度 = " + predC.toFixed(1) + " mg/L", 30, sy + 80);
+      ctx.fillText("真实浓度 = " + trueC.toFixed(1) + " mg/L", 30, sy + 104);
+      ctx.fillStyle = "#be123c";
+      ctx.fillText("误差 = " + Math.abs(predC - trueC).toFixed(1) + " mg/L", 30, sy + 128);
+      result.innerHTML = "对无标记试纸做了定量预测：<b>预测 " + predC.toFixed(1) + " mg/L</b>，真实 " + trueC.toFixed(1) + " mg/L，误差 " + Math.abs(predC - trueC).toFixed(1) + " mg/L。";
+    };
+  }
 
   document.getElementById("filters").addEventListener("click", (e) => {
     const btn = e.target.closest(".filter-btn");
@@ -1880,6 +1953,7 @@
 
   renderLibrary();
   renderApplications();
+  initStripDemo();
   netStart();
 </script>
 </body>
