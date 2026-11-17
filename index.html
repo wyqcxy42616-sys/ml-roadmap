@@ -132,16 +132,31 @@
   .app-card.open .app-body { display: block; }
   .app-col { display: grid; grid-template-columns: 1.3fr 1fr; gap: 18px; padding-top: 18px; }
   .app-col h4, .app-alg h4 { margin: 0 0 8px; font-size: 13px; color: var(--muted); }
-  .app-steps { margin: 0; padding-left: 20px; display: grid; gap: 5px; }
+  .app-goal { margin: 0 0 14px; font-size: 14.5px; color: var(--ink); }
+  .app-io { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+  .io-box { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fbfcfb; }
+  .io-box b { display: block; font-size: 13px; margin-bottom: 2px; }
+  .io-box span { font-size: 13px; color: var(--muted); }
+  .app-steps { margin: 0; padding-left: 20px; display: grid; gap: 9px; }
   .app-steps li { font-size: 14px; }
+  .app-steps li b { display: block; }
+  .app-steps li span { color: var(--muted); font-size: 13px; }
   .db-list { display: grid; gap: 8px; }
   .db-item b { display: block; color: var(--ink); font-size: 14px; }
   .db-item span { color: var(--muted); font-size: 13px; }
+  .db-item em { display: block; color: var(--teal); font-size: 12px; font-style: normal; }
   .app-alg { margin-top: 18px; }
   .alg-row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .alg-chip { border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; font-size: 13px; }
+  .alg-chip { border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13px; }
   .alg-chip b { display: block; }
   .alg-chip span { color: var(--muted); font-size: 12px; }
+  .alg-chip em { display: block; color: #7c4a03; font-size: 11.5px; font-style: normal; margin-top: 2px; }
+  .app-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+  .app-meta h4, .app-pitfalls h4 { margin: 0 0 8px; font-size: 13px; color: var(--muted); }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .app-pitfalls { margin-top: 16px; }
+  .app-pitfalls ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .app-pitfalls li { font-size: 13.5px; color: var(--muted); }
 
   .flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
   .flow-item { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 16px; min-height: 148px; }
@@ -231,6 +246,8 @@
     section { padding: 48px 0; }
     .cat-grid { grid-template-columns: 1fr; }
     .app-col { grid-template-columns: 1fr; }
+    .app-io { grid-template-columns: 1fr; }
+    .app-meta { grid-template-columns: 1fr; }
     .flow { grid-template-columns: 1fr; }
     .lib-grid { grid-template-columns: 1fr; }
     .step-body-grid { grid-template-columns: 1fr; }
@@ -491,23 +508,63 @@
     {
       id: "diagnosis", icon: "i-target", color: "teal",
       title: "诊断模型构建", tag: "用临床或组学数据训练模型，辅助疾病诊断与风险分层",
-      workflow: ["明确临床问题与金标准","收集并标注训练数据","特征提取与数据质控","划分训练 / 验证 / 独立测试集","模型训练与调参，配合交叉验证","评估 AUC、灵敏度、特异度与校准曲线","做可解释性分析","部署为临床辅助工具并持续监控"],
-      databases: [["TCGA","33 种癌症的多组学数据"],["GEO","公开基因表达数据集"],["MIMIC-IV","重症监护结构化病历"],["UK Biobank","大规模人群队列"]],
-      algorithms: [["逻辑回归","可解释的基线模型"],["随机森林","稳健且擅长高维特征"],["XGBoost","表格数据首选"],["SVM","适合小样本高维数据"],["MLP","捕捉非线性关系"]]
+      goal: "训练一个能预测疾病状态或风险分层的模型，并给出可解释的预测概率与特征重要性。",
+      io: [["输入数据","结构化临床指标、基因表达/甲基化/蛋白等组学数据、随访结局标签"],["输出结果","预测概率、风险分层、特征重要性、ROC/AUC 与校准曲线"]],
+      workflow: [
+        ["明确临床问题与金标准","确定二分类/多分类任务，结局定义要可复现，避免标签泄漏"],
+        ["数据收集与整理","统一患者 ID 和时间戳，登记缺失值，保存数据字典"],
+        ["特征提取与质控","去除低方差和高缺失特征，处理异常值并做标准化"],
+        ["数据划分","按患者而非样本切分，分训练/验证/独立测试集，最好有外部队列"],
+        ["建模与调参","从逻辑回归基线开始，逐步尝试树模型和神经网络，配合交叉验证"],
+        ["模型评估","看 AUC、灵敏度、特异度、PPV/NPV、校准曲线和决策曲线"],
+        ["可解释性分析","用 SHAP 值和特征重要性解释预测，结合单变量分析"],
+        ["部署与监控","封装为 API 或接入医院信息系统，持续监控性能漂移"]
+      ],
+      databases: [["TCGA","33 种癌症的多组学数据","公开下载"],["GEO","基因表达与芯片数据","公开下载"],["MIMIC-IV","重症监护结构化病历","需申请"],["UK Biobank","大规模人群队列与随访","需申请"]],
+      algorithms: [["逻辑回归","可解释的基线模型","C"],["随机森林","稳健且擅长高维特征","n_estimators、max_depth"],["XGBoost","表格数据首选","learning_rate、max_depth"],["SVM","小样本高维数据","C、kernel"],["MLP","捕捉非线性关系","hidden、learning_rate"]],
+      metrics: ["AUC","灵敏度","特异度","PPV/NPV","校准曲线"],
+      tools: ["Python","scikit-learn","XGBoost","SHAP","FastAPI"],
+      pitfalls: ["标签泄漏","按样本而非患者切分","过拟合","缺少独立外部验证","类别不平衡未处理"]
     },
     {
       id: "imaging", icon: "i-grid", color: "rose",
       title: "图像智能定量", tag: "从病理切片或医学影像中自动分割结构并提取定量指标",
-      workflow: ["图像获取与去标识","结构标注与分割","预处理、归一化与数据增强","训练分割模型并验证 Dice / IoU","提取面积、密度、阳性率等定量指标","统计分析与一致性检验","生成可视化报告"],
-      databases: [["TCIA","癌症影像公开数据库"],["Camelyon","乳腺癌淋巴结转移切片"],["NIH ChestX-ray","胸部 X 光片"],["Grand Challenge","各类医学图像竞赛数据集"]],
-      algorithms: [["U-Net","医学分割经典架构"],["nnU-Net","自动调参的分割框架"],["DeepLab","语义分割"],["Mask R-CNN","实例分割"],["SAM","通用图像分割基础模型"]]
+      goal: "自动分割医学图像中的目标结构，并提取面积、体积、密度、阳性率等可重复的定量指标。",
+      io: [["输入数据","病理切片 WSI、CT/MRI、X 光等影像及对应标注掩膜"],["输出结果","分割掩膜、定量指标表、可视化报告"]],
+      workflow: [
+        ["图像获取与去标识","统一格式和像素间距，去除患者隐私信息"],
+        ["标注与质控","制定标注规范并多人标注，用 Cohen's kappa 评估一致性"],
+        ["预处理与增强","归一化、重采样、旋转翻转和颜色扰动"],
+        ["模型训练","选择 2D/2.5D/3D 分割网络，常用 Dice+交叉熵损失"],
+        ["分割评估","看 Dice、IoU、HD95、ASSD 等指标"],
+        ["定量指标提取","计算面积/体积/密度/阳性率，注意像素间距换算"],
+        ["统计与一致性","与人工测量做 Bland-Altman 和 ICC 一致性分析"],
+        ["可视化与报告","生成热图、掩膜叠加图并批量导出"]
+      ],
+      databases: [["TCIA","多模态癌症影像","公开下载"],["Camelyon","乳腺癌淋巴结转移切片","公开下载"],["NIH ChestX-ray","胸部 X 光片","公开下载"],["Grand Challenge","各器官分割竞赛数据","公开下载"]],
+      algorithms: [["U-Net","医学分割经典编码-解码架构","深度、通道数"],["nnU-Net","自动调参的强分割基线","自动配置"],["DeepLab","空洞卷积语义分割","output_stride"],["Mask R-CNN","实例分割","检测阈值"],["SAM","通用图像分割基础模型","提示方式"]],
+      metrics: ["Dice","IoU","HD95","ASSD","ICC"],
+      tools: ["Python","PyTorch","MONAI","SimpleITK","OpenSlide"],
+      pitfalls: ["像素间距不一致","标注不一致","切片间信息丢失","同患者不同切片造成数据泄漏"]
     },
     {
       id: "biomarker", icon: "i-flask", color: "amber",
       title: "新标志物开发", tag: "从多组学数据中筛选并验证有诊断或预后价值的生物标志物",
-      workflow: ["差异分析与候选分子筛选","特征降维与正则化筛选","构建组合标志物模型","ROC 与生存分析","独立队列外部验证","机制解释与实验验证"],
-      databases: [["GEO","基因表达与芯片数据"],["CPTAC","癌症蛋白质组数据"],["MetaboLights","代谢组学数据"],["UK Biobank","人群队列与随访结局"]],
-      algorithms: [["LASSO / 弹性网","稀疏特征选择"],["随机森林","重要性排序与筛选"],["Boruta","稳健的特征筛选"],["PCA / t-SNE","高维数据降维可视化"],["Cox 回归","生存预后分析"]]
+      goal: "从多组学数据中筛选出有诊断或预后价值的分子标志物，并构建可外部验证的标志物组合。",
+      io: [["输入数据","基因表达、蛋白、代谢、甲基化等多组学数据及临床结局"],["输出结果","候选标志物列表、组合模型、ROC/生存曲线和验证结果"]],
+      workflow: [
+        ["差异分析与初筛","差异表达/差异丰度分析，多重检验用 FDR 校正"],
+        ["特征降维与筛选","去共线性，用 LASSO 或 Boruta 做稀疏选择"],
+        ["组合标志物建模","用逻辑回归或 Cox 回归组合多个标志物"],
+        ["ROC 与生存分析","看 AUC、KM 曲线和 log-rank 检验"],
+        ["独立队列验证","在外部队列和不同平台上重复验证"],
+        ["机制与实验验证","做通路富集分析和湿实验验证"]
+      ],
+      databases: [["GEO","基因表达与芯片数据","公开下载"],["CPTAC","癌症蛋白质组数据","公开下载"],["MetaboLights","代谢组学数据","公开下载"],["UK Biobank","人群队列与随访结局","需申请"]],
+      algorithms: [["LASSO / 弹性网","稀疏特征选择","alpha、l1_ratio"],["随机森林","重要性排序与筛选","n_estimators"],["Boruta","稳健的特征筛选","迭代次数"],["PCA / t-SNE","高维数据降维可视化","n_components、perplexity"],["Cox 回归","生存预后分析","正则化"]],
+      metrics: ["AUC","FDR","log-rank P","HR","校准"],
+      tools: ["R","Python","limma / edgeR","survival","scikit-learn"],
+      pitfalls: ["多重比较未校正","批次效应","过拟合","缺少外部验证","因果混淆"]
     }
   ];
 
@@ -521,11 +578,18 @@
           <svg class="icon app-chev"><use href="#i-chev"/></svg>
         </button>
         <div class="app-body">
+          <p class="app-goal">${a.goal}</p>
+          <div class="app-io">${a.io.map(x => `<div class="io-box"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("")}</div>
           <div class="app-col">
-            <div><h4>机器学习流程</h4><ol class="app-steps">${a.workflow.map(s => `<li>${s}</li>`).join("")}</ol></div>
-            <div><h4>推荐数据库</h4><div class="db-list">${a.databases.map(d => `<div class="db-item"><b>${d[0]}</b><span>${d[1]}</span></div>`).join("")}</div></div>
+            <div><h4>机器学习流程</h4><ol class="app-steps">${a.workflow.map(s => `<li><b>${s[0]}</b><span>${s[1]}</span></li>`).join("")}</ol></div>
+            <div><h4>推荐数据库</h4><div class="db-list">${a.databases.map(d => `<div class="db-item"><b>${d[0]}</b><span>${d[1]}</span><em>${d[2]}</em></div>`).join("")}</div></div>
           </div>
-          <div class="app-alg"><h4>推荐算法</h4><div class="alg-row">${a.algorithms.map(x => `<div class="alg-chip"><b>${x[0]}</b><span>${x[1]}</span></div>`).join("")}</div></div>
+          <div class="app-alg"><h4>推荐算法</h4><div class="alg-row">${a.algorithms.map(x => `<div class="alg-chip"><b>${x[0]}</b><span>${x[1]}</span><em>关键参数：${x[2]}</em></div>`).join("")}</div></div>
+          <div class="app-meta">
+            <div><h4>评估指标</h4><div class="tag-row">${a.metrics.map(m => `<span class="chip">${m}</span>`).join("")}</div></div>
+            <div><h4>常用工具</h4><div class="tag-row">${a.tools.map(m => `<span class="chip">${m}</span>`).join("")}</div></div>
+          </div>
+          <div class="app-pitfalls"><h4>常见坑与注意事项</h4><ul>${a.pitfalls.map(p => `<li>${p}</li>`).join("")}</ul></div>
         </div>
       </article>`).join("");
   }
